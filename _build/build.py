@@ -15,7 +15,7 @@ PAGES = ROOT / "_build" / "pages"
 
 # The domain actually serving the pages. Link-preview images must live here.
 SITE = "https://3sons-catering-mockup.vercel.app"
-VER = "20261026b"  # bump to bust caches on CSS/JS changes
+VER = "20261027a"  # bump to bust caches on CSS/JS changes
 
 LOGO = "https://cdn.prod.website-files.com/63ef93a7cfa2363d85e102e3/63efa35fa120a6052b8ee844_3sons-logo-white-type.svg"
 TEL = "+18502786082"

@@ -366,7 +366,7 @@ html.nav-lock,html.nav-lock body{overflow:hidden}
 
 /* ===== added 26 Oct 2026 (round 2): announcement, Mile Marker footer, map, menu, visit, faq ===== */
 :root{--road:#1F5F3F}
-.announce{background:var(--ember);color:#1A120C;font-size:.9375rem;font-weight:600;text-align:center}
+.announce{position:relative;z-index:3;background:var(--ember);color:#1A120C;font-size:.9375rem;font-weight:600;text-align:center}
 .announce .wrap{padding-top:9px;padding-bottom:9px}
 .announce a{color:#1A120C;font-weight:700;text-underline-offset:3px;white-space:nowrap}
 .announce :focus-visible{outline-color:#1A120C}
