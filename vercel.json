@@ -1,5 +1,21 @@
 {
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/policies",
+      "destination": "/terms",
+      "permanent": true
+    }
+  ],
   "headers": [
-    { "source": "/(.*)", "headers": [ { "key": "X-Robots-Tag", "value": "noindex, nofollow" } ] }
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    }
   ]
 }

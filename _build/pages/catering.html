@@ -1,0 +1,116 @@
+<main id="main" tabindex="-1">
+  <section class="fit cater" id="catering" aria-labelledby="cater-h">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="eyebrow rv"><span class="n">01</span> Good grub for great gatherings</p><h1 id="cater-h" data-split>Catering for the whole crew.</h1></div>
+        <p class="rv" style="--d:300ms">Every package comes with up to 3 meats, up to 3 sides, sauces and disposable serving utensils. Pick a size. Then build the order below and we’ll tell you the day to order by.</p>
+      </div>
+      <div class="board" data-stagger="200">
+        <div class="rv"><h2 class="board-h">Packages</h2><ul>
+          <li>10 people <em>5 lbs. meat · 1.5 qts. each side · $220</em></li>
+          <li>20 people <em>10 lbs. meat · 2.5 qts. each side · $440</em></li>
+          <li>30 people <em>15 lbs. meat · 3 qts. each side · $660</em></li>
+          <li>40 people <em>20 lbs. meat · 1 gal. each side · $880</em></li>
+          <li>50 people <em>25 lbs. meat · 1.5 gals. each side · $1,100</em></li>
+        </ul></div>
+        <div class="rv"><h2 class="board-h">Meats</h2><ul>
+          <li>Pulled pork</li><li>Pulled chicken</li><li>Brisket <em>+$3 per person</em></li><li>Sausage</li><li>Turkey</li>
+        </ul></div>
+        <div class="rv"><h2 class="board-h">Sides</h2><ul>
+          <li>BBQ beans</li><li>Tater salad</li><li>Cole slaw</li><li>Mac &amp; cheese</li><li>Ma’s collard greens</li>
+        </ul></div>
+        <div class="rv"><h2 class="board-h">Add-ons</h2><ul>
+          <li>Cornbread <em>$20–$100</em></li><li>Banana pudding <em>$40–$200</em></li><li>Iced tea <em>$12 per gal.</em></li>
+        </ul></div>
+      </div>
+      <div class="board-foot rv"><span>All prices + tax. 18% gratuity added to all catering orders. Card payments add 3.5%. No further discounts apply.</span><a class="btn btn--red" href="#planner-sec">Build your order</a></div>
+    </div>
+  </section>
+
+  <section class="fit cater cater2" id="planner-sec" aria-labelledby="plan-h">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="eyebrow rv"><span class="n">02</span> The planner</p><h2 id="plan-h" data-split>How many are you feeding?</h2></div>
+        <p class="rv" style="--d:300ms">Set the headcount and the day. We’ll show what you get, what it costs and when to call it in.</p>
+      </div>
+      <form class="planner clip" id="planner" aria-label="Catering planner" onsubmit="return false">
+        <div class="planner__in">
+          <div class="full">
+            <label class="lbl" for="guests">How many people?</label>
+            <div class="count">
+              <button type="button" class="step" data-step="-1" aria-label="One fewer person">−</button>
+              <output id="guestsOut" for="guests" aria-live="polite">20</output>
+              <button type="button" class="step" data-step="1" aria-label="One more person">+</button>
+              <input type="range" id="guests" name="guests" min="10" max="60" step="1" value="20" aria-label="Number of people, 10 to more than 50">
+            </div>
+          </div>
+          <fieldset>
+            <legend>Add brisket?</legend>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="brisket" value="0" checked><span>No</span></label>
+              <label class="chip"><input type="radio" name="brisket" value="1"><span>Yes <small>+$3/person</small></span></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Add-ons</legend>
+            <div class="chips">
+              <label class="chip"><input type="checkbox" name="addon" value="cornbread"><span>Cornbread</span></label>
+              <label class="chip"><input type="checkbox" name="addon" value="pudding"><span>Banana pudding</span></label>
+            </div>
+          </fieldset>
+          <div>
+            <label class="lbl" for="tea">Gallons of iced tea</label>
+            <input class="inp" type="number" id="tea" name="tea" min="0" max="30" value="0" inputmode="numeric" style="width:110px">
+            <p class="hint">$12 per gallon</p>
+          </div>
+          <div>
+            <label class="lbl" for="date">When’s the meal?</label>
+            <input class="inp" type="date" id="date" name="date">
+            <p class="hint">We’ll work out the day to order by.</p>
+          </div>
+          <div class="full incl">
+            <p class="lbl">Every package comes with</p>
+            <ul><li>Up to 3 meats</li><li>Up to 3 sides</li><li>Sauces</li><li>Disposable serving utensils</li></ul>
+          </div>
+        </div>
+        <div class="planner__out" aria-live="polite">
+          <div><p class="pk" id="pkName">The 20-person package</p><p class="pk-sub" id="pkSub">10 lbs. of meat · 2.5 qts. each of 3 sides</p></div>
+          <ul class="lines" id="lines"></ul>
+          <div class="total"><b id="sub">$440</b><span>food subtotal, before tax</span></div>
+          <p class="fine" id="grat"></p>
+          <p class="deadline" id="deadline">Pick a date and we’ll tell you the day to order by.</p>
+          <a class="btn btn--red" id="orderBtn" href="https://3sonsbar-b-q.gethoneycart.com/" target="_blank" rel="noopener" aria-label="Order catering online (opens in a new tab)">Order catering online</a>
+          <p class="call">Orders are confirmed once paid by phone or in the store. <a href="tel:+18502786082">(850) 278-6082</a></p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="fit" aria-labelledby="occ-h">
+    <div class="wrap">
+      <div class="head"><div><p class="eyebrow rv"><span class="n">03</span> Let us do the cooking</p><h2 id="occ-h" data-split>Crowd pleasers.</h2></div><p class="rv" style="--d:300ms">Local offices, birthday parties, anniversaries, and families in town for the week. Packed and ready to pick up at Mile Marker 1.</p></div>
+      <div class="occ" data-stagger="220">
+        <article class="rv"><span class="n">20</span><h3>Office lunch</h3><p>Feed the whole team without anyone leaving the building. The 20-person package is 10 lbs. of meat and three sides for $440 + tax and 18% gratuity.</p></article>
+        <article class="rv"><span class="n">3+3</span><h3>Birthdays &amp; anniversaries</h3><p>Up to 3 meats and 3 sides, so the picky eaters and the brisket people both win.</p></article>
+        <article class="rv"><span class="n">30</span><h3>Dinner for the rental</h3><p>Got a beach house full of family in town? Pick up dinner for 30 at Mile Marker 1 on the way back from the beach. $660 + tax and 18% gratuity.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="fit" id="custom" aria-labelledby="cu-h">
+    <div class="wrap hh">
+      <div>
+        <p class="eyebrow rv"><span class="n">04</span> Make it yours</p>
+        <h2 data-split id="cu-h">Want something <span class="em">different?</span></h2>
+        <p class="lead rv" style="--d:300ms">Packages are the easy way to order. They’re not the only way. Want slab wraps for the office, loaded baked potatoes for a party, or just a few pounds of brisket? Call us and we’ll build the order with you.</p>
+        <div class="btns rv" style="--d:500ms;margin-top:24px"><a class="btn btn--red" href="tel:+18502786082">Call (850) 278-6082</a><a class="btn btn--ghost" href="/menu">See the full menu</a></div>
+      </div>
+      <div class="tiles tiles--2" data-stagger="160">
+        <article class="tile rv"><span class="k" aria-hidden="true">48 h</span><h3>Bulk orders</h3><p>We prefer 48 hours’ notice because we smoke the traditional way.</p></article>
+        <article class="tile rv"><span class="k" aria-hidden="true">72 h</span><h3>Over 30 people</h3><p>Order at least 72 hours ahead.</p></article>
+        <article class="tile rv"><span class="k" aria-hidden="true">5 days</span><h3>Over 50 people</h3><p>Call or email at least 5 days ahead.</p></article>
+        <article class="tile rv"><span class="k" aria-hidden="true">18%</span><h3>Gratuity</h3><p>Added to all catering and large to-go orders.</p></article>
+      </div>
+    </div>
+  </section>
+</main>
