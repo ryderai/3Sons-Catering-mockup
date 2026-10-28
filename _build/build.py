@@ -3,8 +3,10 @@
 
 Edit the files in _build/ (this script and _build/pages/*.html), then run:
     python3 _build/build.py
-It writes index.html, happy-hour.html and terms.html at the site root.
-Never hand-edit those three files — the next build overwrites them.
+It writes every page (*.html) and its .md copy at the site root, then runs
+scripts/apply-hours.js to fill in the hours from /hours.json.
+Never hand-edit those files — the next build overwrites them.
+Never hand-edit /hours.json either — the owner's editor at /edit-hours owns it.
 
 Built by AI Syndicate — https://aisyndicate.com
 """
@@ -15,7 +17,7 @@ PAGES = ROOT / "_build" / "pages"
 
 # The domain actually serving the pages. Link-preview images must live here.
 SITE = "https://3sons-catering-mockup.vercel.app"
-VER = "20261027a"  # bump to bust caches on CSS/JS changes
+VER = "20261027b"  # bump to bust caches on CSS/JS changes
 
 LOGO = "https://cdn.prod.website-files.com/63ef93a7cfa2363d85e102e3/63efa35fa120a6052b8ee844_3sons-logo-white-type.svg"
 TEL = "+18502786082"
@@ -41,7 +43,7 @@ IMG = {
 
 RESTAURANT_ID = "https://3sonsbarbq.com/#restaurant"
 AMENITIES = [  # Google Business Profile "About" tab, read 26 Oct 2026
-    "Free parking lot", "Free street parking", "Wheelchair-accessible entrance",
+    "Free parking lot", "Wheelchair-accessible entrance",
     "Wheelchair-accessible parking lot", "Wheelchair-accessible restroom",
     "Wheelchair-accessible seating", "Outdoor seating", "Full-service bar", "Kids' menu",
 ]
@@ -58,6 +60,7 @@ RESTAURANT = {
                 "postalCode": "32459", "addressCountry": "US"},
     "geo": {"@type": "GeoCoordinates", "latitude": 30.3631206, "longitude": -86.265578},
     "hasMap": "https://maps.google.com/?cid=15350797986386224004",
+    # Placeholder only: scripts/apply-hours.js fills the real hours from /hours.json on every build.
     "openingHoursSpecification": [{"@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
         "opens": "11:00", "closes": "20:00"}],
@@ -215,10 +218,11 @@ def footer(cta):
       </div>
       <div>
         <h3>Hours</h3>
-        <p style="color:var(--ink);font-size:1.125rem">Every day, 11a–8p</p>
+        <p style="color:var(--ink);font-size:1.125rem"><!--h:summary--><!--/h--></p>
+        <p class="hours-now" data-hours-status hidden></p>
         <p><a href="/happy-hour" style="color:inherit">Après 2p–5p daily</a></p>
         <p>Full bar with bourbon and tequila</p>
-        <p style="margin-top:8px">Closed Thanksgiving &amp; Christmas Day</p>
+        <!--h:holidayP--><!--/h-->
       </div>
       <div>
         <h3>Order</h3>
@@ -257,6 +261,7 @@ def footer(cta):
   {cta}
 </div>
 <script src="/assets/site.js?v={VER}" defer></script>
+<script type="module" src="/assets/hours-live.js?v={VER}"></script>
 </body>
 </html>
 """
@@ -266,7 +271,7 @@ def footer(cta):
 MAP = """<div class="map rv" id="map">
         <svg viewBox="0 0 1200 360" role="img" aria-labelledby="map-t map-d">
           <title id="map-t">Map: 3 Sons Bar-B-Q is one mile off US-98</title>
-          <desc id="map-d">A simple map, not to scale. US-98 runs east and west across the top. County Highway 30A splits off US-98 at its west end and runs along the beach to the east. 3 Sons Bar-B-Q is one mile down 30A from US-98, at Mile Marker 1. The rest of 30A continues east past Dune Allen, Blue Mountain Beach, Grayton Beach, Seaside and Rosemary Beach to Inlet Beach, where it meets US-98 again.</desc>
+          <desc id="map-d">A simple map, not to scale. US-98 runs east and west across the top. County Highway 30A splits off US-98 at its west end and runs along the beach to the east. 3 Sons Bar-B-Q is one mile down 30A from US-98, at Mile Marker 1. The rest of 30A continues east past Dune Allen, Blue Mountain Beach, Grayton Beach and Rosemary Beach to Inlet Beach, where it meets US-98 again.</desc>
           <path class="hwy" d="M20 70 L1180 70"/>
           <path class="slow" d="M420 205 C470 236 520 250 600 256 L1060 270 C1110 272 1140 240 1150 70"/>
           <path class="fast-bed" d="M300 70 C320 130 360 175 420 205"/>
@@ -276,11 +281,10 @@ MAP = """<div class="map rv" id="map">
           <g class="town" style="transition-delay:1.6s"><circle cx="300" cy="70" r="9" class="jct"/><text class="small" x="300" y="104" text-anchor="end" dx="-14">30A SPLITS OFF 98</text></g>
           <text class="mile" x="352" y="168" text-anchor="end">1 mile</text>
           <g class="town" style="transition-delay:2.2s"><circle cx="560" cy="250" r="5"/><text x="560" y="286" text-anchor="middle">Dune Allen</text></g>
-          <g class="town" style="transition-delay:2.4s"><circle cx="680" cy="258" r="5"/><text x="680" y="294" text-anchor="middle">Blue Mountain</text></g>
-          <g class="town" style="transition-delay:2.6s"><circle cx="790" cy="261" r="5"/><text x="790" y="297" text-anchor="middle">Grayton</text></g>
-          <g class="town" style="transition-delay:2.8s"><circle cx="890" cy="264" r="5"/><text x="890" y="300" text-anchor="middle">Seaside</text></g>
-          <g class="town" style="transition-delay:3s"><circle cx="1000" cy="268" r="5"/><text x="1000" y="304" text-anchor="middle">Rosemary</text></g>
-          <g class="town" style="transition-delay:3.2s"><circle cx="1100" cy="262" r="5"/><text x="1100" y="298" text-anchor="middle">Inlet Beach</text></g>
+          <g class="town" style="transition-delay:2.4s"><circle cx="690" cy="259" r="5"/><text x="690" y="295" text-anchor="middle">Blue Mountain</text></g>
+          <g class="town" style="transition-delay:2.6s"><circle cx="820" cy="263" r="5"/><text x="820" y="299" text-anchor="middle">Grayton</text></g>
+          <g class="town" style="transition-delay:2.8s"><circle cx="950" cy="267" r="5"/><text x="950" y="303" text-anchor="middle">Rosemary</text></g>
+          <g class="town" style="transition-delay:3s"><circle cx="1100" cy="262" r="5"/><text x="1100" y="298" text-anchor="middle">Inlet Beach</text></g>
           <text class="slow-lbl" x="800" y="236" text-anchor="middle">THE REST OF 30A · SUMMER TRAFFIC</text>
           <text class="gulf" x="760" y="345" text-anchor="middle">GULF OF MEXICO</text>
           <g transform="translate(420 205)"><g class="pin">
@@ -295,7 +299,7 @@ MAP = """<div class="map rv" id="map">
           <li>US-98 <small>From Destin, Panama City Beach or anywhere along 98</small></li>
           <li>Turn onto the west end of 30A</li>
           <li class="here">3 Sons Bar-B-Q <small>One mile in, at Mile Marker 1</small></li>
-          <li class="far">The rest of 30A <small>Dune Allen, Blue Mountain, Grayton, Seaside, Rosemary, Inlet Beach — you don’t need any of it</small></li>
+          <li class="far">The rest of 30A <small>Dune Allen, Blue Mountain, Grayton, Rosemary, Inlet Beach — you don’t need any of it</small></li>
         </ol>
         <p class="map-note">Simple map, not to scale.</p>
       </div>"""
@@ -364,6 +368,9 @@ CALL_DIR = f'<a class="btn btn--red" href="{MAPS_DIR}" target="_blank" rel="noop
 def to_markdown(title, url, main_html):
     """Plain markdown copy of a page for AI crawlers (house standard 5). Needs bs4."""
     from bs4 import BeautifulSoup
+    # Hours markers survive into the .md as <!--h:key--> … <!--/h--> so scripts/apply-hours.js can fill them.
+    main_html = re.sub(r"<!--h:specialRow-->.*?<!--/h-->", "<p>\u27e6h:specialMd\u27e7\u27e6/h\u27e7</p>", main_html, flags=re.S)
+    main_html = re.sub(r"<!--h:(\w+)-->.*?<!--/h-->", lambda m: "\u27e6h:" + m.group(1) + "\u27e7\u27e6/h\u27e7", main_html, flags=re.S)
     soup = BeautifulSoup(main_html, "html.parser")
     for t in soup.select("svg, script, style, .credit, .photo-credit, nav.toc, nav.menu-jump, .map-note"):
         t.decompose()
@@ -384,7 +391,8 @@ def to_markdown(title, url, main_html):
         elif el.name in ("li", "tr"): out.append(f"- {t}")
         else: out += [t, ""]
     out += ["", "3 Sons Bar-B-Q · 6931 W County Hwy 30A, Santa Rosa Beach, FL 32459 · (850) 278-6082 · brisket@3sonsbarbq.com", ""]
-    return re.sub(r"\n{3,}", "\n\n", "\n".join(out))
+    md = re.sub(r"\n{3,}", "\n\n", "\n".join(out))
+    return re.sub("\u27e6h:(\\w+)\u27e7", r"<!--h:\1-->", md).replace("\u27e6/h\u27e7", "<!--/h-->")
 
 def build():
     src = {n: fill((PAGES / f"{n}.html").read_text()) for n in ["home", "menu", "catering", "happy-hour", "visit", "faq", "terms", "accessibility"]}
@@ -422,9 +430,9 @@ def build():
              schema=webpage("/happy-hour", "Happy hour"), main=src["happy-hour"], cta=CALL_DIR),
         dict(file="visit.html", path="/visit", current="visit", md="visit.md", og="og-visit.jpg",
              title="Visit 3 Sons Bar-B-Q | Parking, Directions &amp; Accessibility · Mile Marker 1 on 30A",
-             desc="3 Sons Bar-B-Q is one mile off US-98 at Mile Marker 1 on 30A. Free parking lot, 99 seats, wheelchair-accessible entrance and ramp, no reservations needed. Open 11a–8p daily.",
+             desc="3 Sons Bar-B-Q is one mile off US-98 at Mile Marker 1 on 30A. Free parking lot, 99 seats, wheelchair-accessible entrance and ramp, no reservations needed.",
              og_title="Visit 3 Sons Bar-B-Q — one mile off US-98",
-             og_desc="Free parking lot, 99 seats, wheelchair accessible. Open 11a–8p daily at Mile Marker 1 on 30A.",
+             og_desc="Free parking lot, 99 seats, wheelchair accessible. Mile Marker 1 on 30A, Santa Rosa Beach.",
              og_alt="The 3 Sons Bar-B-Q building and parking lot with the words One mile off 98",
              schema=webpage("/visit", "Visit"), main=src["visit"], cta=CALL_DIR),
         dict(file="faq.html", path="/faq", current="faq", md="faq.md", og="og-home.jpg",
@@ -465,3 +473,6 @@ def build():
 
 if __name__ == "__main__":
     build()
+    # Fill the hours from /hours.json into the pages, the hidden schema and the .md copies.
+    import subprocess
+    subprocess.run(["node", "scripts/apply-hours.js", "--in-place"], check=True, cwd=ROOT)

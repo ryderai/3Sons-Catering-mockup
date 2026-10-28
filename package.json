@@ -1,0 +1,9 @@
+{
+  "name": "3sons-catering-mockup",
+  "private": true,
+  "type": "module",
+  "description": "3 Sons Bar-B-Q website. Static pages + a small hours editor. Built by AI Syndicate.",
+  "scripts": {
+    "build": "node scripts/apply-hours.js"
+  }
+}

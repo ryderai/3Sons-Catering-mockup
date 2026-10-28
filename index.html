@@ -44,7 +44,7 @@
 <meta name="twitter:image:alt" content="3 Sons Bar-B-Q logo over pulled pork and brisket, with the words Gulf Coast ’Q on 30A">
 <link rel="preload" href="/assets/fonts/alfa-slab-one-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/bitter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/site.css?v=20261027a">
+<link rel="stylesheet" href="/assets/site.css?v=20261027b">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -103,11 +103,6 @@
         },
         {
           "@type": "LocationFeatureSpecification",
-          "name": "Free street parking",
-          "value": true
-        },
-        {
-          "@type": "LocationFeatureSpecification",
           "name": "Wheelchair-accessible entrance",
           "value": true
         },
@@ -146,7 +141,25 @@
       "award": "2024 Best of the Emerald Coast, Barbecue — Emerald Coast Magazine",
       "hasMenu": {
         "@id": "https://3sons-catering-mockup.vercel.app/menu#menu"
-      }
+      },
+      "specialOpeningHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "name": "Thanksgiving",
+          "validFrom": "2026-11-26",
+          "validThrough": "2026-11-26",
+          "opens": "00:00",
+          "closes": "00:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "name": "Christmas Day",
+          "validFrom": "2026-12-25",
+          "validThrough": "2026-12-25",
+          "opens": "00:00",
+          "closes": "00:00"
+        }
+      ]
     }
   ]
 }
@@ -218,7 +231,7 @@
     <h2 id="perks-h" class="sr-only">Good to know before you come</h2>
     <div class="wrap">
       <ul>
-        <li><svg viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="24" height="24" rx="4"/><path d="M12 23V9h5.5a4.5 4.5 0 0 1 0 9H12"/></svg><div><b>Plenty of free parking</b>Our own lot right out front, plus free street parking.</div></li>
+        <li><svg viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="24" height="24" rx="4"/><path d="M12 23V9h5.5a4.5 4.5 0 0 1 0 9H12"/></svg><div><b>Plenty of free parking</b>Our own lot, right out front.</div></li>
         <li><svg viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="15" cy="5.5" r="2.5"/><path d="M15 9v9h7l3 7"/><path d="M15 13h6"/><path d="M11 14.5a7.5 7.5 0 1 0 9.6 9.6"/></svg><div><b>Wheelchair accessible</b>Entrance, parking, restroom and seating.</div></li>
         <li><svg viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5h16l-7 10v10"/><path d="M11 27h12"/><path d="M10.5 9h11"/></svg><div><b>Full-service bar</b>Après 2p–5p every day. <a href="/happy-hour">See happy hour</a></div></li>
         <li><svg viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13 16 5l12 8"/><path d="M7 12v14h18V12"/><path d="M13 26v-7h6v7"/></svg><div><b>Inside or out</b>Seats inside, out on the deck, or at the bar. No reservations needed.</div></li>
@@ -268,12 +281,12 @@
     <div class="wrap">
       <div class="head">
         <div><p class="eyebrow rv"><span class="n">02</span> Right at the start of 30A</p><h2 id="where-h" data-split>One mile off 98. Skip the 30A traffic.</h2></div>
-        <p class="rv" style="--d:300ms">Turn off US-98 onto the west end of 30A and we’re one mile in, at Mile Marker 1. No crawling through Seaside, even in July. Free parking in our own lot when you get here.</p>
+        <p class="rv" style="--d:300ms">Turn off US-98 onto the west end of 30A and we’re one mile in, at Mile Marker 1. No crawling down the rest of 30A, even in July. Free parking in our own lot when you get here.</p>
       </div>
       <div class="map rv" id="map">
         <svg viewBox="0 0 1200 360" role="img" aria-labelledby="map-t map-d">
           <title id="map-t">Map: 3 Sons Bar-B-Q is one mile off US-98</title>
-          <desc id="map-d">A simple map, not to scale. US-98 runs east and west across the top. County Highway 30A splits off US-98 at its west end and runs along the beach to the east. 3 Sons Bar-B-Q is one mile down 30A from US-98, at Mile Marker 1. The rest of 30A continues east past Dune Allen, Blue Mountain Beach, Grayton Beach, Seaside and Rosemary Beach to Inlet Beach, where it meets US-98 again.</desc>
+          <desc id="map-d">A simple map, not to scale. US-98 runs east and west across the top. County Highway 30A splits off US-98 at its west end and runs along the beach to the east. 3 Sons Bar-B-Q is one mile down 30A from US-98, at Mile Marker 1. The rest of 30A continues east past Dune Allen, Blue Mountain Beach, Grayton Beach and Rosemary Beach to Inlet Beach, where it meets US-98 again.</desc>
           <path class="hwy" d="M20 70 L1180 70"/>
           <path class="slow" d="M420 205 C470 236 520 250 600 256 L1060 270 C1110 272 1140 240 1150 70"/>
           <path class="fast-bed" d="M300 70 C320 130 360 175 420 205"/>
@@ -283,11 +296,10 @@
           <g class="town" style="transition-delay:1.6s"><circle cx="300" cy="70" r="9" class="jct"/><text class="small" x="300" y="104" text-anchor="end" dx="-14">30A SPLITS OFF 98</text></g>
           <text class="mile" x="352" y="168" text-anchor="end">1 mile</text>
           <g class="town" style="transition-delay:2.2s"><circle cx="560" cy="250" r="5"/><text x="560" y="286" text-anchor="middle">Dune Allen</text></g>
-          <g class="town" style="transition-delay:2.4s"><circle cx="680" cy="258" r="5"/><text x="680" y="294" text-anchor="middle">Blue Mountain</text></g>
-          <g class="town" style="transition-delay:2.6s"><circle cx="790" cy="261" r="5"/><text x="790" y="297" text-anchor="middle">Grayton</text></g>
-          <g class="town" style="transition-delay:2.8s"><circle cx="890" cy="264" r="5"/><text x="890" y="300" text-anchor="middle">Seaside</text></g>
-          <g class="town" style="transition-delay:3s"><circle cx="1000" cy="268" r="5"/><text x="1000" y="304" text-anchor="middle">Rosemary</text></g>
-          <g class="town" style="transition-delay:3.2s"><circle cx="1100" cy="262" r="5"/><text x="1100" y="298" text-anchor="middle">Inlet Beach</text></g>
+          <g class="town" style="transition-delay:2.4s"><circle cx="690" cy="259" r="5"/><text x="690" y="295" text-anchor="middle">Blue Mountain</text></g>
+          <g class="town" style="transition-delay:2.6s"><circle cx="820" cy="263" r="5"/><text x="820" y="299" text-anchor="middle">Grayton</text></g>
+          <g class="town" style="transition-delay:2.8s"><circle cx="950" cy="267" r="5"/><text x="950" y="303" text-anchor="middle">Rosemary</text></g>
+          <g class="town" style="transition-delay:3s"><circle cx="1100" cy="262" r="5"/><text x="1100" y="298" text-anchor="middle">Inlet Beach</text></g>
           <text class="slow-lbl" x="800" y="236" text-anchor="middle">THE REST OF 30A · SUMMER TRAFFIC</text>
           <text class="gulf" x="760" y="345" text-anchor="middle">GULF OF MEXICO</text>
           <g transform="translate(420 205)"><g class="pin">
@@ -302,7 +314,7 @@
           <li>US-98 <small>From Destin, Panama City Beach or anywhere along 98</small></li>
           <li>Turn onto the west end of 30A</li>
           <li class="here">3 Sons Bar-B-Q <small>One mile in, at Mile Marker 1</small></li>
-          <li class="far">The rest of 30A <small>Dune Allen, Blue Mountain, Grayton, Seaside, Rosemary, Inlet Beach — you don’t need any of it</small></li>
+          <li class="far">The rest of 30A <small>Dune Allen, Blue Mountain, Grayton, Rosemary, Inlet Beach — you don’t need any of it</small></li>
         </ol>
         <p class="map-note">Simple map, not to scale.</p>
       </div>
@@ -363,7 +375,7 @@
         <p class="lead rv" style="--d:300ms">Belly up to the full-service bar or grab a seat out front. Bourbon, tequila, cocktails, beer and wine.</p>
         <div class="times rv" style="--d:450ms">
           <div><span>Après</span><b>2p–5p daily</b></div>
-          <div><span>Open</span><b>11a–8p</b></div>
+          <div><span>Open</span><b><!--h:stat-->11a–8p<!--/h--></b></div>
         </div>
         <div class="btns rv" style="--d:600ms"><a class="btn btn--red" href="/happy-hour">See happy hour</a><a class="btn btn--ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=3+Sons+Bar-B-Q%2C+6931+W+County+Hwy+30A%2C+Santa+Rosa+Beach%2C+FL+32459" target="_blank" rel="noopener" aria-label="Get directions (opens Google Maps in a new tab)">Get directions</a></div>
       </div>
@@ -391,10 +403,11 @@
       </div>
       <div>
         <h3>Hours</h3>
-        <p style="color:var(--ink);font-size:1.125rem">Every day, 11a–8p</p>
+        <p style="color:var(--ink);font-size:1.125rem"><!--h:summary-->Every day, 11a–8p<!--/h--></p>
+        <p class="hours-now" data-hours-status hidden></p>
         <p><a href="/happy-hour" style="color:inherit">Après 2p–5p daily</a></p>
         <p>Full bar with bourbon and tequila</p>
-        <p style="margin-top:8px">Closed Thanksgiving &amp; Christmas Day</p>
+        <!--h:holidayP--><p style="margin-top:8px">Closed Thanksgiving &amp; Christmas Day</p><!--/h-->
       </div>
       <div>
         <h3>Order</h3>
@@ -432,6 +445,7 @@
   <a class="btn btn--ghost" href="tel:+18502786082">Call</a>
   <a class="btn btn--red" href="/catering#planner-sec">Plan catering</a>
 </div>
-<script src="/assets/site.js?v=20261027a" defer></script>
+<script src="/assets/site.js?v=20261027b" defer></script>
+<script type="module" src="/assets/hours-live.js?v=20261027b"></script>
 </body>
 </html>

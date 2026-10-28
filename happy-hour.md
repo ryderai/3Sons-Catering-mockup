@@ -8,9 +8,9 @@ Happy hour · Every day
 
 Après runs 2p–5p every day at our full-service bar. Bourbon, tequila, cocktails, beer and wine, with TVs over the bar.
 
-- 2p–5p Après, every day Open 11a–8p daily
+- 2p–5p Après, every day <!--h:hhOpen-->Open 11a–8p daily<!--/h-->
 - Full bar Bourbon and tequila, plus cocktails, beer and wine Belly up and order right there
-- Free Parking lot on site, plus street parking Usually plenty of room
+- Free Our own parking lot, right out front Usually plenty of room
 - TVs Over the bar, so you can catch the game Pull up a stool
 01 The bar
 
@@ -40,7 +40,7 @@ Free parking in our own lot, 99 seats, and a ramp up to the front door. No reser
 
 ### Parking
 
-Our own lot right out front, plus free street parking nearby.
+Our own lot, right out front.
 
 ### Seats
 

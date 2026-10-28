@@ -52,7 +52,7 @@ Yes, you can find us on 30A Grub to Go and Door Dash!
 
 ## What are your holiday hours?
 
-We are closed on Thanksgiving and Christmas Day. Our operating hours on public holidays may vary. We recommend checking our website or calling us directly to confirm our hours of operation for specific holidays.
+<!--h:faqHoliday-->We are closed on Thanksgiving & Christmas Day.<!--/h--> Our operating hours on public holidays may vary. We recommend checking our website or calling us directly to confirm our hours of operation for specific holidays.
 
 ## Do you have a kids’ menu?
 
@@ -68,7 +68,7 @@ Remember, if you have any further questions or need more information, don’t he
 
 ### Is there parking?
 
-Yes. We have our own free parking lot on site, plus free street parking nearby, so there’s usually plenty of room.
+Yes. We have our own free parking lot on site, so there’s usually plenty of room.
 
 ### Is 3 Sons wheelchair accessible?
 
@@ -80,6 +80,6 @@ We have 99 seats, so groups big and small are welcome. No reservations needed.
 
 ### When is happy hour?
 
-Après runs 2p–5p every day at our full-service bar. We’re open 11a–8p daily. See happy hour
+Après runs 2p–5p every day at our full-service bar. <!--h:sentence-->We’re open 11a–8p daily.<!--/h--> See happy hour
 
 3 Sons Bar-B-Q · 6931 W County Hwy 30A, Santa Rosa Beach, FL 32459 · (850) 278-6082 · brisket@3sonsbarbq.com

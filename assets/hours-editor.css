@@ -1,0 +1,125 @@
+/* 3 Sons Bar-B-Q — owner's hours editor (/edit-hours). Built by AI Syndicate.
+   Light, high-contrast and big on purpose: it gets used on a phone, maybe outside. */
+@font-face{font-family:"Bitter";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/bitter-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Bitter";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/bitter-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Bitter";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/bitter-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"Alfa Slab One";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/alfa-slab-one-latin-400-normal.woff2) format("woff2")}
+:root{
+  --bg:#F5ECDD; --card:#FFFBF4; --ink:#231A14; --ink-2:#4F4034; --line:#D9C9B1; --line-2:#B9A58A;
+  --red:#AA182C; --red-2:#8E1224; --dark:#14100D; --ok:#1E6B3A; --ok-bg:#E3F2E7; --warn-bg:#FBE9D6;
+  --focus:#1A4FA0; --r:12px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.5 "Bitter",Georgia,serif;padding-bottom:calc(120px + env(safe-area-inset-bottom))}
+h1,h2{font-family:"Alfa Slab One","Rockwell",Georgia,serif;font-weight:400;line-height:1.15;margin:0 0 8px}
+h1{font-size:clamp(1.6rem,6vw,2.1rem)}
+h2{font-size:1.3rem}
+p{margin:0 0 12px}
+b,strong{font-weight:700}
+a{color:var(--red)}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+[hidden]{display:none!important}
+.skip{position:absolute;left:-9999px;top:8px;background:#fff;padding:10px 14px;z-index:20}
+.skip:focus{left:8px}
+.muted{color:var(--ink-2)}
+
+.top{background:var(--dark);color:#F5ECDD;padding-top:env(safe-area-inset-top)}
+.top__in{max-width:720px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:14px;min-height:64px}
+.top__logo{display:flex}
+.top__logo img{display:block;height:44px;width:auto}
+.top__title{font-weight:600;letter-spacing:.04em;text-transform:uppercase;font-size:.8125rem;color:#D3C5AE}
+.top .top__out{margin-left:auto;color:#F5ECDD}
+
+main{max-width:720px;margin:0 auto;padding:20px 16px}
+main:focus{outline:none}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px 18px;margin-top:8px}
+.intro{margin:4px 2px 16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 16px;margin:0 0 16px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:10px 20px;border-radius:999px;border:2px solid transparent;font-weight:700;font-size:1rem;cursor:pointer;text-decoration:none;line-height:1.2}
+.btn--red{background:var(--red);color:#fff}
+.btn--red:hover{background:var(--red-2)}
+.btn--red:disabled{background:#B9A58A;color:#3A2E25;cursor:not-allowed}
+.btn--ghost{background:transparent;border-color:var(--ink);color:var(--ink)}
+.btn--ghost:hover{background:#EFE3CF}
+.btn--wide{width:100%}
+.btn--small{min-height:44px;padding:8px 14px;font-size:.9375rem}
+.link-btn{background:none;border:0;padding:10px 4px;min-height:44px;font-weight:700;text-decoration:underline;text-underline-offset:3px;cursor:pointer;color:var(--red)}
+.row-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+
+.field{display:block;margin:0 0 16px}
+.field__label{display:block;font-weight:700;margin-bottom:6px}
+.field__help{display:block;color:var(--ink-2);font-size:.9375rem;margin:-2px 0 8px}
+input[type=text],input[type=password],input[type=date],select{display:block;width:100%;min-height:50px;padding:10px 12px;border:2px solid var(--line-2);border-radius:10px;background:#fff;font-size:1.0625rem}
+select{appearance:none;-webkit-appearance:none;padding-right:40px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%23231A14' stroke-width='2.4'/%3E%3C/svg%3E") no-repeat right 14px center}
+input:focus,select:focus{border-color:var(--focus)}
+[aria-invalid=true]{border-color:var(--red)!important;background-color:#FFF1F1!important}
+.count{display:block;text-align:right;font-size:.875rem;color:var(--ink-2);margin-top:4px}
+.error{color:var(--red);font-weight:700;margin:8px 0 0}
+.error:empty{display:none}
+
+.pw{display:flex;gap:8px}
+.pw input{flex:1;min-width:0}
+.pw__show{min-width:72px;min-height:50px;border:2px solid var(--line-2);border-radius:10px;background:#fff;font-weight:700;cursor:pointer}
+.check{display:flex;align-items:center;gap:12px;min-height:44px;margin:4px 0 12px;cursor:pointer}
+.check input{width:24px;height:24px;margin:0;accent-color:var(--red);flex:none}
+
+.preview{background:var(--ok-bg);border-radius:10px;padding:12px 14px;margin:6px 0 16px}
+.preview__k{display:block;font-size:.8125rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+.preview strong{font-size:1.125rem}
+
+.switch{display:flex;align-items:center;gap:14px;min-height:48px;cursor:pointer;font-weight:700;margin-bottom:12px;position:relative}
+.switch input{position:absolute;opacity:0;width:56px;height:32px;margin:0;cursor:pointer}
+.switch__ui{width:56px;height:32px;border-radius:999px;background:#B9A58A;position:relative;flex:none;transition:background .15s}
+.switch__ui::after{content:"";position:absolute;top:4px;left:4px;width:24px;height:24px;border-radius:50%;background:#fff;transition:transform .15s}
+.switch input:checked + .switch__ui{background:var(--ok)}
+.switch input:checked + .switch__ui::after{transform:translateX(24px)}
+.switch input:focus-visible + .switch__ui{outline:3px solid var(--focus);outline-offset:2px}
+
+.times{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field--inline{margin:0}
+.days{display:grid;gap:10px}
+.day{border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin:0;min-width:0}
+.day legend{padding:0 4px;font-weight:700;font-size:1.0625rem}
+.day__top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.day__state{font-size:.9375rem;color:var(--ink-2)}
+.day.is-closed .times{display:none}
+.day .times{margin-top:6px}
+.day .check{margin:0}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.special{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:10px}
+.special li{border:1px solid var(--line);border-radius:10px;padding:12px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px}
+.special__txt{flex:1 1 200px;min-width:0}
+.special__date{display:block;font-weight:700}
+.special__btns{display:flex;gap:8px}
+.tag{display:inline-block;font-size:.8125rem;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--warn-bg)}
+.tag--today{background:var(--red);color:#fff}
+.subform{border:2px solid var(--ink);border-radius:var(--r);padding:16px 14px;margin:16px 0 0}
+.subform > legend{font-weight:700;padding:0 6px;font-size:1.0625rem}
+.radios{border:0;padding:0;margin:0 0 10px}
+.radios legend{padding:0}
+
+.hist{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:10px}
+.hist li{border:1px solid var(--line);border-radius:10px;padding:12px;display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center}
+.hist__txt{flex:1 1 220px;min-width:0}
+.hist__when{display:block;font-weight:700}
+
+.savebar{position:fixed;left:0;right:0;bottom:0;background:var(--dark);color:#F5ECDD;padding:12px 16px calc(12px + env(safe-area-inset-bottom));z-index:10;box-shadow:0 -6px 20px rgba(0,0,0,.18)}
+.savebar__in{max-width:720px;margin:0 auto;display:flex;align-items:center;gap:14px}
+.savebar__msg{flex:1;min-width:0}
+.savebar p{margin:0;font-size:.9375rem}
+.savebar .btn--red{flex:none;min-width:150px}
+.savebar a{color:#FFD9A8;font-weight:700}
+.save-errors{margin:6px 0 0;padding-left:18px;font-size:.9375rem;color:#FFD0D0}
+.save-errors a{color:#FFD0D0}
+.savebar[data-state=live]{background:var(--ok)}
+.savebar[data-state=error]{background:#6E1020}
+@media (max-width:420px){
+  .savebar__in{flex-direction:column;align-items:stretch;gap:10px}
+  .savebar .btn--red{width:100%}
+  body{padding-bottom:calc(150px + env(safe-area-inset-bottom))}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}

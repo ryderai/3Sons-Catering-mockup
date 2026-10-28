@@ -44,7 +44,7 @@
 <meta name="twitter:image:alt" content="3 Sons Bar-B-Q logo with the words Terms and Conditions">
 <link rel="preload" href="/assets/fonts/alfa-slab-one-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/bitter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/site.css?v=20261027a">
+<link rel="stylesheet" href="/assets/site.css?v=20261027b">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -103,11 +103,6 @@
         },
         {
           "@type": "LocationFeatureSpecification",
-          "name": "Free street parking",
-          "value": true
-        },
-        {
-          "@type": "LocationFeatureSpecification",
           "name": "Wheelchair-accessible entrance",
           "value": true
         },
@@ -146,7 +141,25 @@
       "award": "2024 Best of the Emerald Coast, Barbecue — Emerald Coast Magazine",
       "hasMenu": {
         "@id": "https://3sons-catering-mockup.vercel.app/menu#menu"
-      }
+      },
+      "specialOpeningHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "name": "Thanksgiving",
+          "validFrom": "2026-11-26",
+          "validThrough": "2026-11-26",
+          "opens": "00:00",
+          "closes": "00:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "name": "Christmas Day",
+          "validFrom": "2026-12-25",
+          "validThrough": "2026-12-25",
+          "opens": "00:00",
+          "closes": "00:00"
+        }
+      ]
     },
     {
       "@type": "WebPage",
@@ -295,10 +308,11 @@
       </div>
       <div>
         <h3>Hours</h3>
-        <p style="color:var(--ink);font-size:1.125rem">Every day, 11a–8p</p>
+        <p style="color:var(--ink);font-size:1.125rem"><!--h:summary-->Every day, 11a–8p<!--/h--></p>
+        <p class="hours-now" data-hours-status hidden></p>
         <p><a href="/happy-hour" style="color:inherit">Après 2p–5p daily</a></p>
         <p>Full bar with bourbon and tequila</p>
-        <p style="margin-top:8px">Closed Thanksgiving &amp; Christmas Day</p>
+        <!--h:holidayP--><p style="margin-top:8px">Closed Thanksgiving &amp; Christmas Day</p><!--/h-->
       </div>
       <div>
         <h3>Order</h3>
@@ -336,6 +350,7 @@
   <a class="btn btn--ghost" href="tel:+18502786082">Call</a>
   <a class="btn btn--red" href="/catering#planner-sec">Plan catering</a>
 </div>
-<script src="/assets/site.js?v=20261027a" defer></script>
+<script src="/assets/site.js?v=20261027b" defer></script>
+<script type="module" src="/assets/hours-live.js?v=20261027b"></script>
 </body>
 </html>

@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Edit your hours · 3 Sons Bar-B-Q</title>
+<!-- The owner's hours editor. Hand-written (not made by _build/build.py). Built by AI Syndicate — https://aisyndicate.com -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#14100D">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/bitter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/hours-editor.css?v=20261027b">
+<script type="module" src="/assets/hours-editor.js?v=20261027b"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="top__in">
+    <a class="top__logo" href="/" aria-label="3 Sons Bar-B-Q website (home)"><img src="https://cdn.prod.website-files.com/63ef93a7cfa2363d85e102e3/63efa35fa120a6052b8ee844_3sons-logo-white-type.svg" alt="" width="110" height="44"></a>
+    <span class="top__title">Hours editor</span>
+    <button type="button" class="link-btn top__out" id="signout" hidden>Sign out</button>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <section id="view-loading" class="panel" aria-live="polite">
+    <p class="muted">Loading your hours…</p>
+  </section>
+
+  <section id="view-setup" class="panel" hidden aria-labelledby="setup-h">
+    <h1 id="setup-h">The hours editor isn’t switched on yet</h1>
+    <p>Your website team still needs to finish setting it up. Your hours on the website are safe and unchanged.</p>
+    <p>Questions? Text or call Ryder at AI Syndicate.</p>
+  </section>
+
+  <section id="view-signin" class="panel" hidden aria-labelledby="signin-h">
+    <h1 id="signin-h">Sign in to edit your hours</h1>
+    <p class="muted" id="signin-why">Use the password AI Syndicate gave you.</p>
+    <form id="signin-form" novalidate>
+      <label class="field">
+        <span class="field__label">Password</span>
+        <span class="pw">
+          <input id="pw" name="password" type="password" autocomplete="current-password" required aria-describedby="signin-err" spellcheck="false" autocapitalize="off">
+          <button type="button" class="pw__show" id="pw-show" aria-pressed="false" aria-controls="pw">Show</button>
+        </span>
+      </label>
+      <label class="check"><input type="checkbox" id="remember" checked> <span>Keep me signed in on this device</span></label>
+      <p class="error" id="signin-err" role="alert"></p>
+      <button class="btn btn--red btn--wide" type="submit" id="signin-btn">Sign in</button>
+    </form>
+  </section>
+
+  <form id="editor" hidden novalidate aria-labelledby="ed-h">
+    <div class="intro">
+      <h1 id="ed-h">Your hours</h1>
+      <p>Change anything below, then tap <b>Save changes</b>. Your website updates about a minute later, and so does the info Google and AI search tools read.</p>
+    </div>
+
+    <section class="card" aria-labelledby="reg-h">
+      <h2 id="reg-h">Regular hours</h2>
+      <div class="preview" aria-live="polite">
+        <span class="preview__k">Your website will say</span>
+        <strong id="preview-summary"></strong>
+      </div>
+
+      <label class="switch">
+        <input type="checkbox" id="same" role="switch">
+        <span class="switch__ui" aria-hidden="true"></span>
+        <span>Same hours every day</span>
+      </label>
+
+      <div id="same-row" class="times" hidden>
+        <label class="field field--inline"><span class="field__label">Opens</span><select id="same-from" data-time></select></label>
+        <label class="field field--inline"><span class="field__label">Closes</span><select id="same-to" data-time></select></label>
+      </div>
+
+      <div id="days" class="days" hidden></div>
+      <button type="button" class="link-btn" id="copy-mon" hidden>Copy Monday’s hours to every day</button>
+    </section>
+
+    <section class="card" aria-labelledby="sp-h">
+      <h2 id="sp-h">Holidays &amp; special days</h2>
+      <p class="muted">Closed for a holiday, or open different hours on one day? Add it here. It shows on your website and tells Google. Old dates clear off on their own.</p>
+      <ul id="special-list" class="special"></ul>
+      <p id="special-empty" class="muted special-empty" hidden>No special days coming up.</p>
+      <div class="row-btns" id="special-btns">
+        <button type="button" class="btn btn--ghost" id="add-day">+ Add a day</button>
+        <button type="button" class="btn btn--ghost" id="closed-today">Closed today</button>
+      </div>
+
+      <fieldset id="special-form" class="subform" hidden>
+        <legend id="special-form-h">Add a special day</legend>
+        <label class="field"><span class="field__label">Date</span><input type="date" id="sp-date" required></label>
+        <label class="field"><span class="field__label">What’s it for? <span class="muted">(optional)</span></span><input type="text" id="sp-label" maxlength="40" placeholder="Thanksgiving" autocomplete="off"></label>
+        <fieldset class="radios">
+          <legend class="field__label">Hours that day</legend>
+          <label class="check"><input type="radio" name="sp-kind" value="closed" checked> <span>Closed all day</span></label>
+          <label class="check"><input type="radio" name="sp-kind" value="open"> <span>Open, different hours</span></label>
+        </fieldset>
+        <div class="times" id="sp-times" hidden>
+          <label class="field field--inline"><span class="field__label">Opens</span><select id="sp-from" data-time></select></label>
+          <label class="field field--inline"><span class="field__label">Closes</span><select id="sp-to" data-time></select></label>
+        </div>
+        <p class="error" id="sp-err" role="alert"></p>
+        <div class="row-btns">
+          <button type="button" class="btn btn--red" id="sp-ok">Add to list</button>
+          <button type="button" class="btn btn--ghost" id="sp-cancel">Cancel</button>
+        </div>
+      </fieldset>
+    </section>
+
+    <section class="card" aria-labelledby="notes-h">
+      <h2 id="notes-h">Notes next to your hours</h2>
+      <label class="field">
+        <span class="field__label">Holiday line</span>
+        <span class="field__help" id="hol-help">Shows under your hours on every page. Leave it empty to hide it.</span>
+        <input type="text" id="holiday" maxlength="120" aria-describedby="hol-help hol-count" autocomplete="off">
+        <span class="count" id="hol-count" aria-live="polite"></span>
+      </label>
+      <label class="field">
+        <span class="field__label">Extra note</span>
+        <span class="field__help" id="note-help">Shows after your hours on the Visit page, like summer hours. Leave it empty to hide it.</span>
+        <input type="text" id="note" maxlength="160" aria-describedby="note-help note-count" autocomplete="off">
+        <span class="count" id="note-count" aria-live="polite"></span>
+      </label>
+    </section>
+
+    <section class="card" aria-labelledby="hist-h">
+      <h2 id="hist-h">Recent changes</h2>
+      <p class="muted">Every save is kept. Made a mistake? Pick an earlier version, check it, then tap Save changes.</p>
+      <button type="button" class="btn btn--ghost" id="hist-load">Show recent changes</button>
+      <ol id="hist-list" class="hist" hidden></ol>
+      <p class="error" id="hist-err" role="alert"></p>
+    </section>
+
+    <div class="savebar">
+      <div class="savebar__in">
+        <div class="savebar__msg">
+          <p id="save-status" role="status" aria-live="polite">No changes yet.</p>
+          <ul id="save-errors" class="save-errors" hidden></ul>
+        </div>
+        <button class="btn btn--red" type="submit" id="save" disabled>Save changes</button>
+      </div>
+    </div>
+  </form>
+</main>
+</body>
+</html>

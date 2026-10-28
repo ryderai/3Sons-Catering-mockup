@@ -13,7 +13,7 @@ Brisket, pulled pork, ribs and turkey, smoked on Primitive Pits offset smokers. 
 
 ## Good to know before you come
 
-- Plenty of free parking Our own lot right out front, plus free street parking.
+- Plenty of free parking Our own lot, right out front.
 - Wheelchair accessible Entrance, parking, restroom and seating.
 - Full-service bar Après 2p–5p every day. See happy hour
 - Inside or out Seats inside, out on the deck, or at the bar. No reservations needed.
@@ -57,12 +57,12 @@ Peach cobbler à la mode, $12.
 
 ## One mile off 98. Skip the 30A traffic.
 
-Turn off US-98 onto the west end of 30A and we’re one mile in, at Mile Marker 1. No crawling through Seaside, even in July. Free parking in our own lot when you get here.
+Turn off US-98 onto the west end of 30A and we’re one mile in, at Mile Marker 1. No crawling down the rest of 30A, even in July. Free parking in our own lot when you get here.
 
 - US-98 From Destin, Panama City Beach or anywhere along 98
 - Turn onto the west end of 30A
 - 3 Sons Bar-B-Q One mile in, at Mile Marker 1
-- The rest of 30A Dune Allen, Blue Mountain, Grayton, Seaside, Rosemary, Inlet Beach — you don’t need any of it
+- The rest of 30A Dune Allen, Blue Mountain, Grayton, Rosemary, Inlet Beach — you don’t need any of it
 03 Catering
 
 ## Office lunch. Birthday. Anniversary.

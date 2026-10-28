@@ -1,2 +1,4 @@
 .DS_Store
 .vercel
+public
+node_modules

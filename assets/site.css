@@ -522,3 +522,11 @@ abbr.gf{font:700 .6875rem/1 var(--body);letter-spacing:.06em;text-decoration:non
 @media (max-width:600px){.hero .ctas .btn--ghost{display:inline-flex}.hero .ctas{gap:10px}.hero .ctas .btn{flex:1 1 auto;padding:0 16px;min-height:50px}}
 .board h2.board-h{font:400 1.25rem/1.02 var(--display);text-transform:uppercase;color:var(--accent);margin-bottom:10px}
 .wrap.legal,.wrap.menu{padding-left:var(--gut);padding-right:var(--gut)}.meat__img.ph-hold span{position:absolute;top:14px;left:14px;text-align:left;padding:0}.faq-end{margin:8px 0 28px}
+
+/* Hours (assets/hours-live.js): live "open now" line in the footer + upcoming special days on Visit */
+.hours-now{display:flex;align-items:center;gap:8px;margin-top:2px;font-size:.9375rem;font-weight:600;color:var(--ink)}
+.hours-now::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--ember);flex:none}
+.hours-now[data-open="yes"]::before{background:#5BC27A}
+.hours-now[hidden]{display:none}
+.hours-special{list-style:none;margin:2px 0 0;padding:0;display:grid;gap:2px}
+[data-hours-special][hidden]{display:none}

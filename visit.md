@@ -8,20 +8,20 @@ Visit us · Mile Marker 1 on 30A
 
 We’re one mile off US-98 on the west end of 30A, with our own free parking lot, 99 seats and a ramp up to the front deck.
 
-- 11a–8p Open every day Closed Thanksgiving & Christmas Day
-- Free Our own parking lot, plus street parking Usually plenty of room
+- <!--h:stat-->11a–8p<!--/h--> <!--h:statLabel-->Open every day<!--/h--> <!--h:holiday-->Closed Thanksgiving & Christmas Day<!--/h-->
+- Free Our own parking lot, right out front Usually plenty of room
 - 99 Seats for groups big and small No reservations needed
 - Ramp Wheelchair-accessible entrance, parking, restroom and seating Questions? Call ahead
 01 Getting here
 
 ## One mile off 98. Skip the 30A traffic.
 
-Stay on US-98 and turn onto the west end of County Highway 30A. We’re one mile in, at Mile Marker 1 — look for the mile marker sign out front. You never have to drive through Seaside to get here.
+Stay on US-98 and turn onto the west end of County Highway 30A. We’re one mile in, at Mile Marker 1 — look for the mile marker sign out front. You never have to sit in 30A traffic to get here.
 
 - US-98 From Destin, Panama City Beach or anywhere along 98
 - Turn onto the west end of 30A
 - 3 Sons Bar-B-Q One mile in, at Mile Marker 1
-- The rest of 30A Dune Allen, Blue Mountain, Grayton, Seaside, Rosemary, Inlet Beach — you don’t need any of it
+- The rest of 30A Dune Allen, Blue Mountain, Grayton, Rosemary, Inlet Beach — you don’t need any of it
 02 Find us
 
 ## 6931 W County Hwy 30A
@@ -32,7 +32,7 @@ Stay on US-98 and turn onto the west end of County Highway 30A. We’re one mile
 
 Restaurant
 
-Every day, 11a–8p · We stay open a little later in summer, so call to check
+<!--h:summary-->Every day, 11a–8p<!--/h--><!--h:noteSep--> · We stay open a little later in summer, so call to check<!--/h-->
 
 Après at the bar
 
@@ -40,7 +40,9 @@ Every day, 2p–5p
 
 Holidays
 
-Closed Thanksgiving & Christmas Day. Other holiday hours can vary, so call ahead.
+<!--h:holidayFull-->Closed Thanksgiving & Christmas Day. Other holiday hours can vary, so call ahead.<!--/h-->
+
+<!--h:specialMd-->Coming up: Thu, Nov 26 — Closed (Thanksgiving); Fri, Dec 25 — Closed (Christmas Day)<!--/h-->
 
 03 When you get here
 
@@ -50,7 +52,7 @@ No reservations and plenty of room. Here’s what to expect, whether it’s lunc
 
 ### Parking
 
-Park free in our own lot right out front. There’s free street parking nearby too, so there’s usually plenty of room.
+Park free in our own lot right out front, so there’s usually plenty of room.
 
 ### Seats
 

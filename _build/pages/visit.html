@@ -11,8 +11,8 @@
         <a class="btn btn--ghost" href="tel:{{TEL}}">Call {{TEL_TXT}}</a>
       </div>
       <ul class="proof rv" style="--d:1100ms" aria-label="Visit at a glance">
-        <li><b>11a–8p</b><span>Open every day</span><small>Closed Thanksgiving &amp; Christmas Day</small></li>
-        <li><b>Free</b><span>Our own parking lot, plus street parking</span><small>Usually plenty of room</small></li>
+        <li><b><!--h:stat--><!--/h--></b><span><!--h:statLabel--><!--/h--></span><small><!--h:holiday--><!--/h--></small></li>
+        <li><b>Free</b><span>Our own parking lot, right out front</span><small>Usually plenty of room</small></li>
         <li><b data-count="99">99</b><span>Seats for groups big and small</span><small>No reservations needed</small></li>
         <li><b>Ramp</b><span>Wheelchair-accessible entrance, parking, restroom and seating</span><small>Questions? Call ahead</small></li>
       </ul>
@@ -23,7 +23,7 @@
     <div class="wrap">
       <div class="head">
         <div><p class="eyebrow rv"><span class="n">01</span> Getting here</p><h2 id="where-h" data-split>One mile off 98. Skip the 30A traffic.</h2></div>
-        <p class="rv" style="--d:300ms">Stay on US-98 and turn onto the west end of County Highway 30A. We’re one mile in, at Mile Marker 1 — look for the mile marker sign out front. You never have to drive through Seaside to get here.</p>
+        <p class="rv" style="--d:300ms">Stay on US-98 and turn onto the west end of County Highway 30A. We’re one mile in, at Mile Marker 1 — look for the mile marker sign out front. You never have to sit in 30A traffic to get here.</p>
       </div>
       {{MAP}}
     </div>
@@ -37,9 +37,10 @@
         <address class="rv" style="--d:300ms">3 Sons Bar-B-Q<br>6931 W County Hwy 30A<br>Santa Rosa Beach, FL 32459</address>
         <p class="rv" style="--d:400ms"><a class="big-link" href="tel:{{TEL}}">{{TEL_TXT}}</a><br><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
         <dl class="hours rv" style="--d:500ms">
-          <div><dt>Restaurant</dt><dd>Every day, 11a–8p · We stay open a little later in summer, so call to check</dd></div>
+          <div><dt>Restaurant</dt><dd><!--h:summary--><!--/h--><!--h:noteSep--><!--/h--></dd></div>
           <div><dt>Après at the bar</dt><dd>Every day, 2p–5p</dd></div>
-          <div><dt>Holidays</dt><dd>Closed Thanksgiving &amp; Christmas Day. Other holiday hours can vary, so call ahead.</dd></div>
+          <div><dt>Holidays</dt><dd><!--h:holidayFull--><!--/h--></dd></div>
+          <!--h:specialRow--><!--/h-->
         </dl>
       </div>
       <div class="gmap rv" style="--d:200ms">
@@ -55,7 +56,7 @@
         <p class="rv" style="--d:300ms">No reservations and plenty of room. Here’s what to expect, whether it’s lunch for two or the whole office.</p>
       </div>
       <div class="tiles" data-stagger="160">
-        <article class="tile rv"><span class="k" aria-hidden="true">Free</span><h3>Parking</h3><p>Park free in our own lot right out front. There’s free street parking nearby too, so there’s usually plenty of room.</p></article>
+        <article class="tile rv"><span class="k" aria-hidden="true">Free</span><h3>Parking</h3><p>Park free in our own lot right out front, so there’s usually plenty of room.</p></article>
         <article class="tile rv"><span class="k" aria-hidden="true">99</span><h3>Seats</h3><p>Room for 99. Big groups are welcome. Just walk in.</p></article>
         <article class="tile rv"><span class="k" aria-hidden="true">Access</span><h3>Wheelchair accessible</h3><p>A ramp up to the front deck, plus a wheelchair-accessible entrance, parking, restroom and seating. Need anything else? Call before you come.</p></article>
         <article class="tile rv"><span class="k" aria-hidden="true">2 ways</span><h3>How to order</h3><p>Walk through our fast-moving Q line and sit wherever you like. Or belly up to the full-service bar and order there.</p></article>
