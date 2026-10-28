@@ -2,20 +2,56 @@
   "version": 1,
   "timezone": "America/Chicago",
   "week": {
-    "mon": { "open": true, "from": "11:00", "to": "20:00" },
-    "tue": { "open": true, "from": "11:00", "to": "20:00" },
-    "wed": { "open": true, "from": "11:00", "to": "20:00" },
-    "thu": { "open": true, "from": "11:00", "to": "20:00" },
-    "fri": { "open": true, "from": "11:00", "to": "20:00" },
-    "sat": { "open": true, "from": "11:00", "to": "20:00" },
-    "sun": { "open": true, "from": "11:00", "to": "20:00" }
+    "mon": {
+      "open": true,
+      "from": "11:00",
+      "to": "20:00"
+    },
+    "tue": {
+      "open": true,
+      "from": "11:00",
+      "to": "20:00"
+    },
+    "wed": {
+      "open": true,
+      "from": "11:00",
+      "to": "20:00"
+    },
+    "thu": {
+      "open": true,
+      "from": "11:00",
+      "to": "20:00"
+    },
+    "fri": {
+      "open": true,
+      "from": "11:00",
+      "to": "20:00"
+    },
+    "sat": {
+      "open": true,
+      "from": "11:00",
+      "to": "20:00"
+    },
+    "sun": {
+      "open": true,
+      "from": "11:00",
+      "to": "20:00"
+    }
   },
   "special": [
-    { "date": "2026-11-26", "label": "Thanksgiving", "closed": true },
-    { "date": "2026-12-25", "label": "Christmas Day", "closed": true }
+    {
+      "date": "2026-11-26",
+      "label": "Thanksgiving",
+      "closed": true
+    },
+    {
+      "date": "2026-12-25",
+      "label": "Christmas Day",
+      "closed": true
+    }
   ],
   "holidayLine": "Closed Thanksgiving & Christmas Day",
-  "note": "We stay open a little later in summer, so call to check",
-  "rev": "initial-2026-10-27",
-  "updatedAt": "2026-10-27T00:00:00.000Z"
+  "note": "TEST — please ignore (AI Syndicate check)",
+  "rev": "2026-10-28T03:47:11.096Z-304b19",
+  "updatedAt": "2026-10-28T03:47:11.096Z"
 }
