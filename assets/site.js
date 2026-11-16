@@ -120,7 +120,7 @@
     if(n>50){
       $('pkName').textContent='More than 50 people';
       $('pkSub').textContent='Big crowd. Let’s plan it together.';
-      lines.innerHTML='<li><span>Call or email at least 5 days ahead</span><span>Custom</span></li>';
+      lines.innerHTML='<li><span>Call or email at least 72 hours ahead</span><span>Custom</span></li>';
       $('sub').textContent='Let’s talk'; $('grat').textContent='We’ll build the order with you by phone or email. Orders are confirmed once paid.';
       btn.textContent='Call (850) 278-6082'; btn.href='tel:+18502786082'; btn.removeAttribute('target'); btn.removeAttribute('aria-label');
     } else {
@@ -140,12 +140,12 @@
       $('grat').textContent='About '+money(sub*1.18)+' with the 18% gratuity added to all catering orders, before tax (an estimate — your total is confirmed when you call). Paying by card adds a 3.5% processing fee. No further discounts apply.';
       btn.textContent='Order catering online'; btn.href='https://3sonsbar-b-q.gethoneycart.com/'; btn.target='_blank'; btn.setAttribute('aria-label','Order catering online (opens in a new tab)');
     }
-    // order-by date: 48h bulk, 72h over 30, 5 days over 50 (3sonsbarbq.com/catering)
+    // order-by date: 48h bulk, 72h over 30 (any size above 30, incl. 50+: Chris dropped the 5-day rule, 13 Nov 2026)
     var dl=$('deadline');
     if(d && d.value){
       var parts=d.value.split('-'); var meal=new Date(+parts[0],+parts[1]-1,+parts[2]);
-      var days=n>50?5:(n>30?3:2);
-      var need=days===5?'5 days':(days*24)+' hours';
+      var days=n>30?3:2;
+      var need=(days*24)+' hours';
       var by=new Date(meal); by.setDate(by.getDate()-days-1); // one extra day so a phone order at closing still clears the full notice
       var label=by.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'});
       var y=meal.getFullYear(), nov1=new Date(y,10,1), tg=new Date(y,10,1+((11-nov1.getDay())%7)+21);
@@ -192,4 +192,30 @@
     var b=sec.querySelector('.qa-btn'); if(b){ set(b,true); }
   }
   fromHash(); window.addEventListener('hashchange',fromHash);
+})();
+
+/* Email sign-up in the footer (16 Nov 2026). Says "thanks" only when the server confirms it was sent. */
+(function(){
+  var f=document.getElementById('signup'); if(!f) return;
+  var em=f.querySelector('input[type=email]'), msg=document.getElementById('signup-msg'), btn=f.querySelector('button');
+  if(!em||!msg||!btn) return;
+  var say=function(t,cls){msg.className='signup__msg'+(cls?' '+cls:''); msg.innerHTML=t;};
+  var fallback='Sign-up isn’t working right now. Email us at <a href="mailto:brisket@3sonsbarbq.com">brisket@3sonsbarbq.com</a> and we’ll add you.';
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var v=(em.value||'').trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)){em.setAttribute('aria-invalid','true'); say('Please enter a full email address, like name@example.com.','err'); em.focus(); return;}
+    em.removeAttribute('aria-invalid'); btn.disabled=true; say('Signing you up…');
+    var hp=f.querySelector('input[name=website]');
+    fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json','X-Signup':'1'},
+      body:JSON.stringify({email:v,website:hp?hp.value:'',page:location.pathname})})
+      .then(function(r){return r.json().catch(function(){return {};}).then(function(j){return {ok:r.ok,j:j};});})
+      .then(function(x){
+        if(x.ok&&x.j.ok){f.reset(); say('You’re on the list. Thanks!','ok');}
+        else if(x.j.error==='email'){em.setAttribute('aria-invalid','true'); say('Please enter a full email address, like name@example.com.','err');}
+        else say(fallback,'err');
+      })
+      .catch(function(){say(fallback,'err');})
+      .then(function(){btn.disabled=false;});
+  });
 })();

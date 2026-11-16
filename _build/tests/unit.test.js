@@ -232,7 +232,7 @@ test('built pages: new hours reach every page, the hidden schema and the .md cop
           }
           if (n['@type'] === 'FAQPage') {
             const hh = n.mainEntity.find((q) => q.name === 'When is happy hour?');
-            assert.equal(hh.acceptedAnswer.text, 'Après runs 2p–5p every day at our full-service bar. We’re open Mon, Wed–Sun, 10:30a–9p, and closed Tue.');
+            assert.equal(hh.acceptedAnswer.text, 'Happy hour runs 2p–5p every day at our full-service bar. We’re open Mon, Wed–Sun, 10:30a–9p, and closed Tue.');
           }
         }
       }

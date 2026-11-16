@@ -59,7 +59,7 @@ export function mockGitHub({ token, repo = 'ryderai/3Sons-Catering-mockup', init
 
 const TYPES = { '.html': 'text/html; charset=utf-8', '.md': 'text/markdown; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript',
   '.json': 'application/json', '.png': 'image/png', '.jpg': 'image/jpeg', '.ico': 'image/x-icon', '.woff2': 'font/woff2',
-  '.txt': 'text/plain', '.svg': 'image/svg+xml', '.webmanifest': 'application/manifest+json' };
+  '.txt': 'text/plain', '.svg': 'image/svg+xml', '.webp': 'image/webp', '.webmanifest': 'application/manifest+json' };
 
 /**
  * Serves siteDir/public the way Vercel does (cleanUrls, the vercel.json headers and redirects)

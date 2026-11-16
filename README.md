@@ -55,7 +55,7 @@ Preview deployments refuse to edit (they return "not switched on") on purpose.
 ## Before launch
 - Swap hotlinked photos for files from Chris. Flip noindex. Change `SITE`. Add `llms.txt`, `llms-full.txt`, `agents.md` (they're already on the publish allowlist).
 - Hook up the menu to MustHave Menus (blocked until menu access exists).
-- Happy hour times (Après 2p–5p) are NOT in the editor yet. They're written into the pages and a link-preview image.
+- Happy hour times (2p–5p) are NOT in the editor yet. They're written into the pages and a link-preview image.
 - Honey Cart stays a click-through link until the design is final.
 
 Built by AI Syndicate — https://aisyndicate.com

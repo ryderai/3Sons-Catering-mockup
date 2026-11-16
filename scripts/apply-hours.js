@@ -50,9 +50,11 @@ if (!inPlace) {
 }
 
 let filled = 0;
-for (const name of fs.readdirSync(OUT)) {
+const outNames = fs.readdirSync(OUT);
+for (const name of outNames) {
   const file = path.join(OUT, name);
   if (!/\.(html|md)$/.test(name) || !fs.statSync(file).isFile()) continue;
+  if (inPlace && !publish(name, outNames)) continue; // e.g. README.md documents the markers; it is not a page
   const before = fs.readFileSync(file, 'utf8');
   if (!before.includes('<!--h:')) continue;
   const after = name.endsWith('.html') ? applyToHtml(before, value, today) : applyToMd(before, value, today);

@@ -1,14 +1,14 @@
-# Happy Hour at 3 Sons Bar-B-Q | Après 2p–5p Daily · Santa Rosa Beach, 30A
+# Happy Hour at 3 Sons Bar-B-Q | 2p–5p Daily · Santa Rosa Beach, 30A
 
 Source: https://3sons-catering-mockup.vercel.app/happy-hour
 
 Happy hour · Every day
 
-# Après 2p–5p. Pull up a stool.
+# Happy hour 2p–5p. Pull up a stool.
 
-Après runs 2p–5p every day at our full-service bar. Bourbon, tequila, cocktails, beer and wine, with TVs over the bar.
+Happy hour runs 2p–5p every day at our full-service bar. Bourbon, tequila, cocktails, beer and wine, with TVs over the bar.
 
-- 2p–5p Après, every day <!--h:hhOpen-->Open 11a–8p daily<!--/h-->
+- 2p–5p Happy hour, every day <!--h:hhOpen-->Open 11a–8p daily<!--/h-->
 - Full bar Bourbon and tequila, plus cocktails, beer and wine Belly up and order right there
 - Free Our own parking lot, right out front Usually plenty of room
 - TVs Over the bar, so you can catch the game Pull up a stool
@@ -16,7 +16,7 @@ Après runs 2p–5p every day at our full-service bar. Bourbon, tequila, cocktai
 
 ## Belly up. We’ll pour.
 
-Our bar is full service, so you can skip the Q line and order right there. Come for après, stay for brisket.
+Our bar is full service, so you can skip the Q line and order right there. Come for happy hour, stay for brisket.
 
 02 Out front
 

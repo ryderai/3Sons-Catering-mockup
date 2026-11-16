@@ -48,7 +48,7 @@ Yes, we specialize in takeout! Our service line is quick and efficient, so just 
 
 ## Do you offer delivery?
 
-Yes, you can find us on 30A Grub to Go and Door Dash!
+Yes, you can find us on 30A Beach Bites and DoorDash!
 
 ## What are your holiday hours?
 
@@ -80,6 +80,6 @@ We have 99 seats, so groups big and small are welcome. No reservations needed.
 
 ### When is happy hour?
 
-Après runs 2p–5p every day at our full-service bar. <!--h:sentence-->We’re open 11a–8p daily.<!--/h--> See happy hour
+Happy hour runs 2p–5p every day at our full-service bar. <!--h:sentence-->We’re open 11a–8p daily.<!--/h--> See happy hour
 
 3 Sons Bar-B-Q · 6931 W County Hwy 30A, Santa Rosa Beach, FL 32459 · (850) 278-6082 · brisket@3sonsbarbq.com

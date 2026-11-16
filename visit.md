@@ -34,7 +34,7 @@ Restaurant
 
 <!--h:summary-->Every day, 11a–8p<!--/h--><!--h:noteSep--> · We stay open a little later in summer, so call to check<!--/h-->
 
-Après at the bar
+Happy hour at the bar
 
 Every day, 2p–5p
 
@@ -72,7 +72,7 @@ We have a kids’ menu for 12 and under, and high chairs if you need one.
 
 ### Taking it home?
 
-We specialize in takeout. Come in and we’ll pack it up, or find us on 30A Grub to Go and DoorDash.
+We specialize in takeout. Come in and we’ll pack it up, or find us on 30A Beach Bites and DoorDash.
 
 04 What to look for
 

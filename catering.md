@@ -93,9 +93,9 @@ We prefer 48 hours’ notice because we smoke the traditional way.
 
 Order at least 72 hours ahead.
 
-### Over 50 people
+### Pick it up on 30A
 
-Call or email at least 5 days ahead.
+Catering orders are picked up at the restaurant, at Mile Marker 1.
 
 ### Gratuity
 

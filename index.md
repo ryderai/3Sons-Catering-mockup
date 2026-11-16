@@ -4,9 +4,9 @@ Source: https://3sons-catering-mockup.vercel.app/
 
 # Gulf Coast ’Q. Smoked low & slow on 30A.
 
-Brisket, pulled pork, ribs and turkey, smoked on Primitive Pits offset smokers. Smoking since 2013, now at Mile Marker 1 on 30A. Grab lunch, pull up a stool at the bar, or let us feed the whole crew.
+Brisket, pulled pork, ribs, turkey, sausage and pulled chicken, smoked on Primitive Pits offset smokers. Smoking since 2013, now at Mile Marker 1 on 30A. Grab lunch, pull up a stool at the bar, or let us feed the whole crew.
 
-- 2024 Best of the Emerald Coast, Barbecue Emerald Coast Magazine
+- 2024 & 2026 Best of the Emerald Coast Emerald Coast Magazine · 2024 for Barbecue
 - 172 Google reviews that bring up the brisket Google’s review topic count, read Oct 1, 2026
 - Est. 2013 Now at Mile Marker 1 on 30A, one mile from US-98 Santa Rosa Beach, FL
 - 99 Seats, plus our own free parking lot Groups welcome · no reservations needed
@@ -15,7 +15,7 @@ Brisket, pulled pork, ribs and turkey, smoked on Primitive Pits offset smokers. 
 
 - Plenty of free parking Our own lot, right out front.
 - Wheelchair accessible Entrance, parking, restroom and seating.
-- Full-service bar Après 2p–5p every day. See happy hour
+- Full-service bar Happy hour 2p–5p every day. See happy hour
 - Inside or out Seats inside, out on the deck, or at the bar. No reservations needed.
 01 Off the pit
 
@@ -93,7 +93,7 @@ Photo · 3 Sons Bar-B-Q
 
 05 Happy hour
 
-## Après. Every day.
+## Happy hour. Every day.
 
 Belly up to the full-service bar or grab a seat out front. Bourbon, tequila, cocktails, beer and wine.
 

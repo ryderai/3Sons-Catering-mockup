@@ -44,7 +44,7 @@
 <meta name="twitter:image:alt" content="3 Sons Bar-B-Q logo over pulled pork and brisket, with the words Gulf Coast ’Q on 30A">
 <link rel="preload" href="/assets/fonts/alfa-slab-one-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/bitter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/site.css?v=20261027b">
+<link rel="stylesheet" href="/assets/site.css?v=20261116a">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -138,7 +138,10 @@
         }
       ],
       "publicAccess": true,
-      "award": "2024 Best of the Emerald Coast, Barbecue — Emerald Coast Magazine",
+      "award": [
+        "2024 Best of the Emerald Coast, Barbecue — Emerald Coast Magazine",
+        "2026 Best of the Emerald Coast — Emerald Coast Magazine"
+      ],
       "hasMenu": {
         "@id": "https://3sons-catering-mockup.vercel.app/menu#menu"
       },
@@ -370,11 +373,11 @@
 
   <section class="fit" aria-labelledby="occ-h">
     <div class="wrap">
-      <div class="head"><div><p class="eyebrow rv"><span class="n">03</span> Let us do the cooking</p><h2 id="occ-h" data-split>Crowd pleasers.</h2></div><p class="rv" style="--d:300ms">Local offices, birthday parties, anniversaries, and families in town for the week. Packed and ready to pick up at Mile Marker 1.</p></div>
+      <div class="head"><div><p class="eyebrow rv"><span class="n">03</span> Let us do the cooking</p><h2 id="occ-h" data-split>Crowd pleasers.</h2></div><p class="rv" style="--d:300ms">Local offices, birthday parties, anniversaries, and families in town for the week. Packed and ready to pick up at <span class="nw">Mile Marker 1</span>.</p></div>
       <div class="occ" data-stagger="220">
         <article class="rv"><span class="n">20</span><h3>Office lunch</h3><p>Feed the whole team without anyone leaving the building. The 20-person package is 10 lbs. of meat and three sides for $440 + tax and 18% gratuity.</p></article>
         <article class="rv"><span class="n">3+3</span><h3>Birthdays &amp; anniversaries</h3><p>Up to 3 meats and 3 sides, so the picky eaters and the brisket people both win.</p></article>
-        <article class="rv"><span class="n">30</span><h3>Dinner for the rental</h3><p>Got a beach house full of family in town? Pick up dinner for 30 at Mile Marker 1 on the way back from the beach. $660 + tax and 18% gratuity.</p></article>
+        <article class="rv"><span class="n">30</span><h3>Dinner for the rental</h3><p>Got a beach house full of family in town? Pick up dinner for 30 at <span class="nw">Mile Marker 1</span> on the way back from the beach. $660 + tax and 18% gratuity.</p></article>
       </div>
     </div>
   </section>
@@ -390,7 +393,7 @@
       <div class="tiles tiles--2" data-stagger="160">
         <article class="tile rv"><span class="k" aria-hidden="true">48 h</span><h3>Bulk orders</h3><p>We prefer 48 hours’ notice because we smoke the traditional way.</p></article>
         <article class="tile rv"><span class="k" aria-hidden="true">72 h</span><h3>Over 30 people</h3><p>Order at least 72 hours ahead.</p></article>
-        <article class="tile rv"><span class="k" aria-hidden="true">5 days</span><h3>Over 50 people</h3><p>Call or email at least 5 days ahead.</p></article>
+        <article class="tile rv"><span class="k" aria-hidden="true">Pickup</span><h3>Pick it up on 30A</h3><p>Catering orders are picked up at the restaurant, at <span class="nw">Mile Marker 1</span>.</p></article>
         <article class="tile rv"><span class="k" aria-hidden="true">18%</span><h3>Gratuity</h3><p>Added to all catering and large to-go orders.</p></article>
       </div>
     </div>
@@ -403,8 +406,8 @@
   <div class="wrap dest__top">
     <p class="eyebrow">Beach. Meat. Repeat.</p>
     <div class="dest__head">
-      <span class="dest__sign" aria-hidden="true"><span>30A<b>1</b></span></span>
-      <h2 class="dest__word" id="dest-h">See you at <span class="em">Mile Marker 1.</span></h2>
+      <span class="dest__sign" aria-hidden="true"><span>Mile<b>1</b></span></span>
+      <h2 class="dest__word" id="dest-h">See you at <span class="em"><span class="nw">Mile Marker 1</span>.</span></h2>
     </div>
     <div class="dest__grid">
       <div>
@@ -418,7 +421,7 @@
         <h3>Hours</h3>
         <p style="color:var(--ink);font-size:1.125rem"><!--h:summary-->Every day, 11a–8p<!--/h--></p>
         <p class="hours-now" data-hours-status hidden></p>
-        <p><a href="/happy-hour" style="color:inherit">Après 2p–5p daily</a></p>
+        <p><a href="/happy-hour" style="color:inherit">Happy hour 2p–5p daily</a></p>
         <p>Full bar with bourbon and tequila</p>
         <!--h:holidayP--><p style="margin-top:8px">Closed Thanksgiving &amp; Christmas Day</p><!--/h-->
       </div>
@@ -428,7 +431,7 @@
         <ul>
           <li><a href="https://3sonsbar-b-q.gethoneycart.com/" target="_blank" rel="noopener" aria-label="Order catering online (opens in a new tab)">Order catering online</a></li>
           <li><a href="mailto:brisket@3sonsbarbq.com">brisket@3sonsbarbq.com</a></li>
-          <li>Restaurant delivery (not catering): 30A Grub to Go &amp; DoorDash</li>
+          <li>Restaurant delivery (not catering): 30A Beach Bites &amp; DoorDash</li>
         </ul>
       </div>
       <div>
@@ -446,9 +449,22 @@
         </ul>
       </div>
     </div>
+    <form class="signup" id="signup" action="/api/subscribe" method="post" novalidate>
+      <div class="signup__copy">
+        <h3 id="signup-h">Get the news first</h3>
+        <p>Specials, holiday hours and new things off the pit. Just email, no spam.</p>
+      </div>
+      <div class="signup__row">
+        <label class="sr-only" for="signup-email">Your email address</label>
+        <input id="signup-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="Your email" required aria-describedby="signup-msg">
+        <input class="signup__hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn btn--red" type="submit">Subscribe</button>
+      </div>
+      <p class="signup__msg" id="signup-msg" role="status" aria-live="polite"></p>
+    </form>
   </div>
   <div class="wrap dest__bar">
-    <span>© 2026 3 Sons Bar-B-Q · Est. 2013 · ★ 4.6 on Google · 2024 Best of the Emerald Coast, Barbecue</span>
+    <span>© 2026 3 Sons Bar-B-Q · Est. 2013 · ★ 4.6 on Google · 2024 &amp; 2026 Best of the Emerald Coast</span>
     <p class="ai-syndicate-credit">GEO Optimization by <a href="https://aisyndicate.com" target="_blank" rel="noopener" aria-label="AI Syndicate (opens in a new tab)">AI Syndicate</a></p>
     <a href="#main">Back to top ↑</a>
   </div>
@@ -458,7 +474,7 @@
   <a class="btn btn--ghost" href="tel:+18502786082">Call</a>
   <a class="btn btn--red" href="#planner-sec">Plan catering</a>
 </div>
-<script src="/assets/site.js?v=20261027b" defer></script>
-<script type="module" src="/assets/hours-live.js?v=20261027b"></script>
+<script src="/assets/site.js?v=20261116a" defer></script>
+<script type="module" src="/assets/hours-live.js?v=20261116a"></script>
 </body>
 </html>

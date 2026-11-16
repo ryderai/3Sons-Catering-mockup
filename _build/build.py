@@ -17,7 +17,7 @@ PAGES = ROOT / "_build" / "pages"
 
 # The domain actually serving the pages. Link-preview images must live here.
 SITE = "https://3sons-catering-mockup.vercel.app"
-VER = "20261027b"  # bump to bust caches on CSS/JS changes
+VER = "20261116a"  # bump to bust caches on CSS/JS changes
 
 LOGO = "https://cdn.prod.website-files.com/63ef93a7cfa2363d85e102e3/63efa35fa120a6052b8ee844_3sons-logo-white-type.svg"
 TEL = "+18502786082"
@@ -66,7 +66,8 @@ RESTAURANT = {
         "opens": "11:00", "closes": "20:00"}],
     "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": a, "value": True} for a in AMENITIES],
     "publicAccess": True,
-    "award": "2024 Best of the Emerald Coast, Barbecue — Emerald Coast Magazine",
+    "award": ["2024 Best of the Emerald Coast, Barbecue — Emerald Coast Magazine",
+              "2026 Best of the Emerald Coast — Emerald Coast Magazine"],  # 2026: Chris Vaughn, email 13 Nov 2026
     "hasMenu": {"@id": SITE + "/menu#menu"},
 }
 
@@ -205,7 +206,7 @@ def footer(cta):
   <div class="wrap dest__top">
     <p class="eyebrow">Beach. Meat. Repeat.</p>
     <div class="dest__head">
-      <span class="dest__sign" aria-hidden="true"><span>30A<b>1</b></span></span>
+      <span class="dest__sign" aria-hidden="true"><span>Mile<b>1</b></span></span>
       <h2 class="dest__word" id="dest-h">See you at <span class="em">Mile Marker 1.</span></h2>
     </div>
     <div class="dest__grid">
@@ -220,7 +221,7 @@ def footer(cta):
         <h3>Hours</h3>
         <p style="color:var(--ink);font-size:1.125rem"><!--h:summary--><!--/h--></p>
         <p class="hours-now" data-hours-status hidden></p>
-        <p><a href="/happy-hour" style="color:inherit">Après 2p–5p daily</a></p>
+        <p><a href="/happy-hour" style="color:inherit">Happy hour 2p–5p daily</a></p>
         <p>Full bar with bourbon and tequila</p>
         <!--h:holidayP--><!--/h-->
       </div>
@@ -230,7 +231,7 @@ def footer(cta):
         <ul>
           <li><a href="{HONEYCART}" target="_blank" rel="noopener" aria-label="Order catering online (opens in a new tab)">Order catering online</a></li>
           <li><a href="mailto:{EMAIL}">{EMAIL}</a></li>
-          <li>Restaurant delivery (not catering): 30A Grub to Go &amp; DoorDash</li>
+          <li>Restaurant delivery (not catering): 30A Beach Bites &amp; DoorDash</li>
         </ul>
       </div>
       <div>
@@ -248,9 +249,22 @@ def footer(cta):
         </ul>
       </div>
     </div>
+    <form class="signup" id="signup" action="/api/subscribe" method="post" novalidate>
+      <div class="signup__copy">
+        <h3 id="signup-h">Get the news first</h3>
+        <p>Specials, holiday hours and new things off the pit. Just email, no spam.</p>
+      </div>
+      <div class="signup__row">
+        <label class="sr-only" for="signup-email">Your email address</label>
+        <input id="signup-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="Your email" required aria-describedby="signup-msg">
+        <input class="signup__hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn btn--red" type="submit">Subscribe</button>
+      </div>
+      <p class="signup__msg" id="signup-msg" role="status" aria-live="polite"></p>
+    </form>
   </div>
   <div class="wrap dest__bar">
-    <span>© 2026 3 Sons Bar-B-Q · Est. 2013 · ★ 4.6 on Google · 2024 Best of the Emerald Coast, Barbecue</span>
+    <span>© 2026 3 Sons Bar-B-Q · Est. 2013 · ★ 4.6 on Google · 2024 &amp; 2026 Best of the Emerald Coast</span>
     <p class="ai-syndicate-credit">GEO Optimization by <a href="https://aisyndicate.com" target="_blank" rel="noopener" aria-label="AI Syndicate (opens in a new tab)">AI Syndicate</a></p>
     <a href="#main">Back to top ↑</a>
   </div>
@@ -303,6 +317,21 @@ MAP = """<div class="map rv" id="map">
         </ol>
         <p class="map-note">Simple map, not to scale.</p>
       </div>"""
+
+def keep_together(html):
+    """Wrap visible "Mile Marker 1" in a no-wrap span so it never breaks across lines
+    (Chris, 13 Nov 2026). Text only — never inside tags, <head>, <script>, <style> or <svg>."""
+    out, skip = [], 0
+    for part in re.split(r"(<[^>]+>)", html):
+        if part.startswith("<"):
+            t = re.match(r"</?\s*([a-zA-Z0-9]+)", part)
+            name = t.group(1).lower() if t else ""
+            if name in ("head", "script", "style", "svg", "title", "textarea"):
+                skip += -1 if part.startswith("</") else (0 if part.endswith("/>") else 1)
+            out.append(part)
+        else:
+            out.append(part if skip else re.sub(r"Mile Marker 1\b", '<span class="nw">Mile Marker 1</span>', part))
+    return "".join(out)
 
 def fill(html):
     html = html.replace("{{MAP}}", MAP)
@@ -402,7 +431,7 @@ def build():
              title="3 Sons Bar-B-Q | BBQ, Catering &amp; Happy Hour in Santa Rosa Beach on 30A",
              desc="Gulf Coast ’Q smoked daily at Mile Marker 1 on 30A, one mile off US-98. Brisket, the Slab Wrap, Texas Twinkies, a full-service bar, 99 seats, free parking and catering from $220.",
              og_title="3 Sons Bar-B-Q — Gulf Coast ’Q on 30A",
-             og_desc="Smoked daily since 2013, one mile off US-98. Free parking, full bar, après 2p–5p daily, catering from $220.",
+             og_desc="Smoked daily since 2013, one mile off US-98. Free parking, full bar, happy hour 2p–5p daily, catering from $220.",
              og_alt="3 Sons Bar-B-Q logo over pulled pork and brisket, with the words Gulf Coast ’Q on 30A",
              schema=ld({"@context": "https://schema.org", "@graph": [menu_restaurant]}) + "\n" + ld(GEO_CREDIT),
              main=src["home"], cta=CALL_PLAN),
@@ -422,11 +451,11 @@ def build():
              og_alt="3 Sons Bar-B-Q logo over pulled pork and brisket, with the words Gulf Coast ’Q on 30A",
              schema=webpage("/catering", "Catering", [catering_menu()]), main=src["catering"], cta=CALL_PLAN.replace("/catering#planner-sec", "#planner-sec")),
         dict(file="happy-hour.html", path="/happy-hour", current="happy-hour", md="happy-hour.md", og="og-happy-hour.jpg",
-             title="Happy Hour at 3 Sons Bar-B-Q | Après 2p–5p Daily · Santa Rosa Beach, 30A",
-             desc="Après 2p–5p every day at the 3 Sons Bar-B-Q full-service bar. Bourbon, tequila, cocktails, beer and wine, TVs over the bar, free parking, at Mile Marker 1 on 30A.",
-             og_title="Happy Hour at 3 Sons Bar-B-Q — Après 2p–5p daily",
+             title="Happy Hour at 3 Sons Bar-B-Q | 2p–5p Daily · Santa Rosa Beach, 30A",
+             desc="Happy hour 2p–5p every day at the 3 Sons Bar-B-Q full-service bar. Bourbon, tequila, cocktails, beer and wine, TVs over the bar, free parking, at Mile Marker 1 on 30A.",
+             og_title="Happy Hour at 3 Sons Bar-B-Q — 2p–5p daily",
              og_desc="Full-service bar, bourbon and tequila, TVs over the bar. Mile Marker 1 on 30A, Santa Rosa Beach.",
-             og_alt="The lit 3 Sons Bar-B-Q sign at dusk with the words Après 2p–5p daily",
+             og_alt="The 3 Sons Bar-B-Q sign at dusk with the words Happy hour 2p–5p daily",
              schema=webpage("/happy-hour", "Happy hour"), main=src["happy-hour"], cta=CALL_DIR),
         dict(file="visit.html", path="/visit", current="visit", md="visit.md", og="og-visit.jpg",
              title="Visit 3 Sons Bar-B-Q | Parking, Directions &amp; Accessibility · Mile Marker 1 on 30A",
@@ -458,7 +487,7 @@ def build():
              schema=webpage("/accessibility", "Accessibility"), main=src["accessibility"], cta=CALL_DIR),
     ]
     for p in pages:
-        out = head(p) + "\n" + header(p["current"]) + "\n" + p["main"].rstrip() + "\n" + footer(p["cta"])
+        out = head(p) + "\n" + keep_together(header(p["current"]) + "\n" + p["main"].rstrip() + "\n" + footer(p["cta"]))
         (ROOT / p["file"]).write_text(out)
         md = to_markdown(re.sub(r"&amp;", "&", p["title"]), SITE + p["path"], p["main"])
         (ROOT / p["md"]).write_text(md)
