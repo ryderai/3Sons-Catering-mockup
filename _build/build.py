@@ -17,7 +17,7 @@ PAGES = ROOT / "_build" / "pages"
 
 # The domain actually serving the pages. Link-preview images must live here.
 SITE = "https://3sons-catering-mockup.vercel.app"
-VER = "20261116a"  # bump to bust caches on CSS/JS changes
+VER = "20261125a"  # bump to bust caches on CSS/JS changes
 
 LOGO = "https://cdn.prod.website-files.com/63ef93a7cfa2363d85e102e3/63efa35fa120a6052b8ee844_3sons-logo-white-type.svg"
 TEL = "+18502786082"
@@ -162,8 +162,7 @@ NAV = [("/catering", "Catering", "catering"), ("/menu", "Menu", "menu"), ("/visi
 
 # ---- Announcement bar (the first thing a future CMS should edit). Set to None to hide it.
 # Source: 3sonsbarbq.com homepage button "Thanksgiving Pre-Orders & Online Catering Orders" (read 26 Oct 2026).
-ANNOUNCEMENT = {"text": "Thanksgiving pre-orders are open.", "link_text": "Pre-order online",
-                "href": HONEYCART, "external": True}
+ANNOUNCEMENT = None  # Thanksgiving banner removed 25 Nov 2026
 
 def announcement():
     a = ANNOUNCEMENT

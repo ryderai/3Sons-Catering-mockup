@@ -566,3 +566,6 @@ abbr.gf{font:700 .6875rem/1 var(--body);letter-spacing:.06em;text-decoration:non
 .signup__msg a{color:inherit}
 @media (max-width:760px){.signup{grid-template-columns:1fr}.signup__msg{grid-column:1}}
 @media (max-width:380px){.signup__row{flex-direction:column}.signup__row .btn{width:100%}}
+
+/* 25 Nov 2026: "Mile Marker 1" never splits, so shrink page titles a little on the smallest phones (fits at 320px) */
+@media (max-width:400px){.page-top h1{font-size:1.875rem}}

@@ -368,7 +368,8 @@ for (const [w, h] of [[1280, 900], [1715, 1236], [390, 844]]) {
       const el = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
       return a.contains(el) ? 'on top' : `covered by ${el && el.className}`;
     });
-    ok(top === 'on top', `banner ${p} @${w}x${h}: ${top}`);
+    // ANNOUNCEMENT can be None in build.py (no banner) — then there is nothing to cover.
+    ok(top === 'on top' || top === 'missing', `banner ${p} @${w}x${h}: ${top}`);
   }
 }
 
