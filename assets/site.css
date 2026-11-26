@@ -1,4 +1,4 @@
-/* 3 Sons Bar-B-Q — shared styles. Built by AI Syndicate. */
+/* 3 Sons Bar-B-Q — shared styles. */
 @font-face{font-family:"Bitter";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/bitter-latin-400-normal.woff2) format("woff2")}
 @font-face{font-family:"Bitter";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/bitter-latin-500-normal.woff2) format("woff2")}
 @font-face{font-family:"Bitter";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/bitter-latin-600-normal.woff2) format("woff2")}
@@ -221,7 +221,7 @@ fieldset{border:0;margin:0;padding:0;min-width:0}
 main{position:relative;z-index:2;background:var(--bg);box-shadow:0 30px 60px -20px rgba(0,0,0,.8)}
 .dest{position:relative;z-index:1;min-height:100svh;display:flex;flex-direction:column;justify-content:space-between;color:var(--ink);background:#0B0907;overflow:hidden;isolation:isolate}
 @media (min-width:901px) and (min-height:640px){.dest{position:sticky;bottom:0;height:100svh}}
-.dest__bg{position:absolute;inset:0;z-index:-1;background:url('https://cdn.prod.website-files.com/63ef93a7cfa2363d85e102e3/6464d5cddf7a01af8b53e0a4_fire-coals-background.webp') center/cover no-repeat;opacity:.38}
+.dest__bg{position:absolute;inset:0;z-index:-1;background:url('/assets/img/fire-coals-background.webp') center/cover no-repeat;opacity:.38}
 .dest::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#0B0907 0%,rgba(11,9,7,.55) 45%,rgba(11,9,7,.92) 100%)}
 .dest__top{padding-top:calc(var(--hdr) + clamp(16px,4vh,48px));margin-top:auto}
 .dest .eyebrow{color:var(--ember)}
@@ -567,5 +567,8 @@ abbr.gf{font:700 .6875rem/1 var(--body);letter-spacing:.06em;text-decoration:non
 @media (max-width:760px){.signup{grid-template-columns:1fr}.signup__msg{grid-column:1}}
 @media (max-width:380px){.signup__row{flex-direction:column}.signup__row .btn{width:100%}}
 
-/* 25 Nov 2026: "Mile Marker 1" never splits, so shrink page titles a little on the smallest phones (fits at 320px) */
-@media (max-width:400px){.page-top h1{font-size:1.875rem}}
+/* 26 Nov 2026 launch: text-only cards where photos are still to come; two-photo catering strip */
+.meat--plain{background:var(--surface-2)}.meat--plain::after{display:none}
+.meat--plain .meat__body{align-self:stretch;display:flex;flex-direction:column;justify-content:flex-end}
+.hh__pics figure:nth-child(2):last-child{grid-row:span 2}
+@media (max-width:480px){.page-top h1{font-size:clamp(1.75rem,9vw,2.4rem)}}

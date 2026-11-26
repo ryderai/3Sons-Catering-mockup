@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-/* 3 Sons Bar-B-Q — build step. Built by AI Syndicate.
+/* 3 Sons Bar-B-Q — build step.
  *
- * Reads /hours.json and writes the hours into every page, the hidden Google/AI code (JSON-LD)
- * and the .md copies.
+ * Reads /hours.json and writes the hours into every page, the hidden Google/AI code (JSON-LD),
+ * the .md copies and llms.txt / llms-full.txt.
  *
  *   node scripts/apply-hours.js            → Vercel's build: copies the site into public/ with the hours filled in
  *   node scripts/apply-hours.js --in-place → fills the files in the repo itself (run by _build/build.py)
@@ -53,13 +53,24 @@ let filled = 0;
 const outNames = fs.readdirSync(OUT);
 for (const name of outNames) {
   const file = path.join(OUT, name);
-  if (!/\.(html|md)$/.test(name) || !fs.statSync(file).isFile()) continue;
+  if (!/\.(html|md|txt)$/.test(name) || !fs.statSync(file).isFile()) continue;
   if (inPlace && !publish(name, outNames)) continue; // e.g. README.md documents the markers; it is not a page
   const before = fs.readFileSync(file, 'utf8');
   if (!before.includes('<!--h:')) continue;
   const after = name.endsWith('.html') ? applyToHtml(before, value, today) : applyToMd(before, value, today);
   if (after !== before) fs.writeFileSync(file, after);
   filled++;
+}
+
+// On Vercel: stop the deploy if a page or the CSS points at an image that is not in the repo
+// (e.g. _build/fetch-images.sh was not run). Vercel then keeps the last good version live.
+if (!inPlace && process.env.VERCEL) {
+  const missing = new Set();
+  for (const name of fs.readdirSync(OUT).filter((n) => /\.html$/.test(n)).concat(['assets/site.css'])) {
+    const text = fs.readFileSync(path.join(OUT, name), 'utf8');
+    for (const m of text.matchAll(/\/(assets\/img\/[^"')?\s]+)/g)) if (!fs.existsSync(path.join(OUT, m[1]))) missing.add(m[1]);
+  }
+  if (missing.size) { console.error('Missing images — run _build/fetch-images.sh and push again:\n - ' + [...missing].join('\n - ')); process.exit(1); }
 }
 
 console.log(`hours applied to ${filled} files (${inPlace ? 'in place' : 'public/'}) · today ${today} · rev ${raw.rev || 'none'}`);

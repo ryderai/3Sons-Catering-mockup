@@ -1,6 +1,6 @@
 # FAQ | 3 Sons Bar-B-Q · Catering, Parking, Reservations & More
 
-Source: https://3sons-catering-mockup.vercel.app/faq
+Source: https://3sonsbarbq.com/faq
 
 Get answers here
 

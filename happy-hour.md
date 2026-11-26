@@ -1,6 +1,6 @@
 # Happy Hour at 3 Sons Bar-B-Q | 2p–5p Daily · Santa Rosa Beach, 30A
 
-Source: https://3sons-catering-mockup.vercel.app/happy-hour
+Source: https://3sonsbarbq.com/happy-hour
 
 Happy hour · Every day
 

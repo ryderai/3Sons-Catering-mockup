@@ -1,6 +1,6 @@
 # 3 Sons Bar-B-Q | BBQ, Catering & Happy Hour in Santa Rosa Beach on 30A
 
-Source: https://3sons-catering-mockup.vercel.app/
+Source: https://3sonsbarbq.com/
 
 # Gulf Coast ’Q. Smoked low & slow on 30A.
 

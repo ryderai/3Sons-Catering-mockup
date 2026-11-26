@@ -38,7 +38,8 @@ test('2024 and 2026 Best of the Emerald Coast, with the 2026 seal', () => {
   assert.ok(t.includes('2024 &amp; 2026'));
   for (const f of pages.filter((p) => p.endsWith('.html'))) {
     assert.ok(read(f).includes('2024 &amp; 2026 Best of the Emerald Coast'), `${f} footer`);
-    assert.ok(read(f).includes('"2026 Best of the Emerald Coast — Emerald Coast Magazine"'), `${f} schema`);
+    // Rule 115 (26 Nov 2026): the full Restaurant node (with its awards) prints only on / and /visit.
+    if (['index.html', 'visit.html'].includes(f)) assert.ok(read(f).includes('"2026 Best of the Emerald Coast — Emerald Coast Magazine"'), `${f} schema`);
   }
 });
 

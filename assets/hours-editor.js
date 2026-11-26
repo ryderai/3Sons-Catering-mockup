@@ -1,4 +1,4 @@
-/* 3 Sons Bar-B-Q — the owner's hours editor (/edit-hours). Built by AI Syndicate.
+/* 3 Sons Bar-B-Q — the owner's hours editor (/edit-hours).
  * Uses the same rules as the website and the server (assets/hours-core.js). */
 import {
   DAYS, DAY_NAME, TZ, LIMITS, timeOptions, fmtTimeLong, fmtRange, fmtDate, words, validate, todayISO,

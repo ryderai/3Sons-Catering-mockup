@@ -68,7 +68,15 @@ const TYPES = { '.html': 'text/html; charset=utf-8', '.md': 'text/markdown; char
 export function devServer(siteDir) {
   const vc = JSON.parse(fs.readFileSync(path.join(siteDir, 'vercel.json'), 'utf8'));
   const handlers = {};
-  const matchSrc = (src, p) => src === '/(.*)' || src === p;
+  // vercel.json source → regex (enough for this site: "/(.*)", "/api/(.*)", "/x/:slug*", exact paths)
+  const toRe = (src) => new RegExp('^' + src.replace(/:\w+\*/g, '(.*)').replace(/:\w+/g, '([^/]+)') + '$');
+  const matchSrc = (src, p) => toRe(src).test(p);
+  // "missing"/"has" host conditions, matched like Vercel (anchored regex on the Host header, port ignored)
+  const hostOk = (rule, req) => {
+    const host = String(req.headers.host || '').replace(/:\d+$/, '');
+    const m = (c) => c.type === 'host' && new RegExp('^' + c.value + '$').test(host);
+    return (rule.missing || []).every((c) => !m(c)) && (rule.has || []).every((c) => m(c));
+  };
   const server = http.createServer(async (req, res) => {
     const u = new URL(req.url, 'http://x');
     let p = decodeURIComponent(u.pathname);
@@ -81,7 +89,7 @@ export function devServer(siteDir) {
         handlers[name] ||= (await import(pathToFileURL(file).href)).default;
         return await handlers[name](req, res);
       }
-      for (const r of vc.redirects || []) if (r.source === p) { res.writeHead(308, { Location: r.destination }); return res.end(); }
+      for (const r of vc.redirects || []) if (matchSrc(r.source, p)) { res.writeHead(308, { Location: r.destination }); return res.end(); }
       if (p.endsWith('.html')) { res.writeHead(308, { Location: p.replace(/(index)?\.html$/, '') || '/' }); return res.end(); }
       const pub = path.join(siteDir, 'public');
       let file = path.join(pub, p);
@@ -90,7 +98,7 @@ export function devServer(siteDir) {
       else if (!path.extname(p) && fs.existsSync(file + '.html')) file += '.html';
       if (!fs.existsSync(file) || fs.statSync(file).isDirectory()) { res.writeHead(404, { 'Content-Type': 'text/html' }); return res.end('<h1>404</h1>'); }
       const headers = { 'Content-Type': TYPES[path.extname(file)] || 'application/octet-stream' };
-      for (const h of vc.headers || []) if (matchSrc(h.source, p)) for (const { key, value } of h.headers) headers[key] = value;
+      for (const h of vc.headers || []) if (matchSrc(h.source, p) && hostOk(h, req)) for (const { key, value } of h.headers) headers[key] = value;
       res.writeHead(200, headers);
       res.end(fs.readFileSync(file));
     } catch (e) {

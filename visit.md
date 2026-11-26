@@ -1,6 +1,6 @@
 # Visit 3 Sons Bar-B-Q | Parking, Directions & Accessibility · Mile Marker 1 on 30A
 
-Source: https://3sons-catering-mockup.vercel.app/visit
+Source: https://3sonsbarbq.com/visit
 
 Visit us · Mile Marker 1 on 30A
 

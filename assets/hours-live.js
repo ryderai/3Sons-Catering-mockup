@@ -1,4 +1,4 @@
-/* 3 Sons Bar-B-Q — live hours on the website. Built by AI Syndicate.
+/* 3 Sons Bar-B-Q — live hours on the website.
  * Shows "Open now · until 8p" in the footer and keeps the Visit page's "Coming up" list current.
  * The hours text itself is already in the page (written at build time), so the site still
  * reads right if this file never runs. */

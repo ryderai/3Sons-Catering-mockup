@@ -1,4 +1,4 @@
-/* 3 Sons Bar-B-Q — shared scripts. Built by AI Syndicate. */
+/* 3 Sons Bar-B-Q — shared scripts. */
 (function(){
   var doc=document, body=doc.body;
   body.classList.remove('no-js');

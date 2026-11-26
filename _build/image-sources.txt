@@ -1,0 +1,19 @@
+# local-path source-url (copied 26 Nov 2026)
+assets/img/3sons-logo-white-type.svg https://cdn.prod.website-files.com/63ef93a7cfa2363d85e102e3/63efa35fa120a6052b8ee844_3sons-logo-white-type.svg
+assets/img/fire-coals-background.webp https://cdn.prod.website-files.com/63ef93a7cfa2363d85e102e3/6464d5cddf7a01af8b53e0a4_fire-coals-background.webp
+assets/img/3sons-catering-1.webp https://cdn.prod.website-files.com/63ef93a7cfa2363d85e102e3/64e62e63608f42e274dd1ce8_3Sons-catering-1.webp
+assets/img/catering-background.webp https://cdn.prod.website-files.com/63ef93a7cfa2363d85e102e3/64e66b09932ab3b8bfb6dcb9_catering-background.webp
+assets/img/gbp/bar1-w1100.jpg https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RTspirGf22zQ4hSRCl1TzOXLxVOe73Sq6w2ar1zow3ad5hGEnNSa1gRBhKCYzzal9efwEuqmOfzcMyLVrT48tW0nDJZzsxRtnGxSpbIVQk0WezxKWgR31b3zJUSPJeXniXzWo=w1100
+assets/img/gbp/bar1-w1200.jpg https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RTspirGf22zQ4hSRCl1TzOXLxVOe73Sq6w2ar1zow3ad5hGEnNSa1gRBhKCYzzal9efwEuqmOfzcMyLVrT48tW0nDJZzsxRtnGxSpbIVQk0WezxKWgR31b3zJUSPJeXniXzWo=w1200
+assets/img/gbp/bar2-w1200.jpg https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QM3rTMP-s8l1hSAXdqRdHeiXh6elSD856ai9G7rVNQ5wLaBCqT2p99Nw2KRATwdVrQZvhjAvOZ70K3CvUTmUI8dp3GMIef6rA_vyWAcNqd2DRK30KXUpHFVIxS7K8TOq7VmuIcZg=w1200
+assets/img/gbp/bar2-w900.jpg https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QM3rTMP-s8l1hSAXdqRdHeiXh6elSD856ai9G7rVNQ5wLaBCqT2p99Nw2KRATwdVrQZvhjAvOZ70K3CvUTmUI8dp3GMIef6rA_vyWAcNqd2DRK30KXUpHFVIxS7K8TOq7VmuIcZg=w900
+assets/img/gbp/deck-w1200.jpg https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RnbrbkMnwp3WTBzi24RAVu2CK3hdWX_g9o-dHt5AvMJ7t6m1who1Oijry_VmMChUKhLCLRnccEULClT0v8k-RqBAlLAUDYlpIkNW3Pvy5PjxId3Ejo10KYoYFz-wNOuafxQhRq=w1200
+assets/img/gbp/deck-w1600.jpg https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RnbrbkMnwp3WTBzi24RAVu2CK3hdWX_g9o-dHt5AvMJ7t6m1who1Oijry_VmMChUKhLCLRnccEULClT0v8k-RqBAlLAUDYlpIkNW3Pvy5PjxId3Ejo10KYoYFz-wNOuafxQhRq=w1600
+assets/img/gbp/deck-w2000.jpg https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RnbrbkMnwp3WTBzi24RAVu2CK3hdWX_g9o-dHt5AvMJ7t6m1who1Oijry_VmMChUKhLCLRnccEULClT0v8k-RqBAlLAUDYlpIkNW3Pvy5PjxId3Ejo10KYoYFz-wNOuafxQhRq=w2000
+assets/img/gbp/deck-w900.jpg https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RnbrbkMnwp3WTBzi24RAVu2CK3hdWX_g9o-dHt5AvMJ7t6m1who1Oijry_VmMChUKhLCLRnccEULClT0v8k-RqBAlLAUDYlpIkNW3Pvy5PjxId3Ejo10KYoYFz-wNOuafxQhRq=w900
+assets/img/gbp/dusk-w900.jpg https://lh3.googleusercontent.com/gps-cs-s/ANWiy9ShubTHr6KSvByWrbDkTt7v-Ta20XsqRwIMr5oZ-AFyJby-XJTAfHq8rulwxAuCZu_t6pNsGA18iiBS_C3k7PEfe8G8L4-YNtdsePgB80jdr8qgFN1EqxShOiHIvlEopZvq3fHELQ=w900
+assets/img/gbp/lot-w1200.jpg https://lh3.googleusercontent.com/gps-cs-s/ANWiy9T1E5nJI6iduach5tpupHLhXYK0SnC97j-6FEMLOd4fpLO7d2-idWbXwx7XF11CryoWro03emSDN1l6x5Jzqj9-N_ODAepXkUSWy2zIrUAlgvo4D_M-uTavCyl_B1AZjDQnZ_hHRQ=w1200
+assets/img/gbp/lot-w1600.jpg https://lh3.googleusercontent.com/gps-cs-s/ANWiy9T1E5nJI6iduach5tpupHLhXYK0SnC97j-6FEMLOd4fpLO7d2-idWbXwx7XF11CryoWro03emSDN1l6x5Jzqj9-N_ODAepXkUSWy2zIrUAlgvo4D_M-uTavCyl_B1AZjDQnZ_hHRQ=w1600
+assets/img/gbp/lot-w2000.jpg https://lh3.googleusercontent.com/gps-cs-s/ANWiy9T1E5nJI6iduach5tpupHLhXYK0SnC97j-6FEMLOd4fpLO7d2-idWbXwx7XF11CryoWro03emSDN1l6x5Jzqj9-N_ODAepXkUSWy2zIrUAlgvo4D_M-uTavCyl_B1AZjDQnZ_hHRQ=w2000
+assets/img/gbp/lot-w900.jpg https://lh3.googleusercontent.com/gps-cs-s/ANWiy9T1E5nJI6iduach5tpupHLhXYK0SnC97j-6FEMLOd4fpLO7d2-idWbXwx7XF11CryoWro03emSDN1l6x5Jzqj9-N_ODAepXkUSWy2zIrUAlgvo4D_M-uTavCyl_B1AZjDQnZ_hHRQ=w900
+assets/img/gbp/sign-w900.jpg https://lh3.googleusercontent.com/gps-cs-s/ANWiy9T2r1dZIaAlBcLrm4K6DhdLq4HRJb3bZVbjdL4SoDEJlSHdKwqJciSzfBzF3OCOhLmlNTQek73EFyTTI4c_qIDiBFFGg5fh4hyLB3ESnqXPs9cLyo_WXRB0TpI0c8pYziq5jrg=w900

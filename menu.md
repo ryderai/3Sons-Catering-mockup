@@ -1,6 +1,6 @@
 # Menu | 3 Sons Bar-B-Q · Brisket, Slab Wrap & Texas Twinkies in Santa Rosa Beach
 
-Source: https://3sons-catering-mockup.vercel.app/menu
+Source: https://3sonsbarbq.com/menu
 
 The menu
 

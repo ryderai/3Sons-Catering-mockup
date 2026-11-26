@@ -1,6 +1,6 @@
 # Terms & Conditions, Gift Cards and Accessibility | 3 Sons Bar-B-Q
 
-Source: https://3sons-catering-mockup.vercel.app/terms
+Source: https://3sonsbarbq.com/terms
 
 The fine print.
 

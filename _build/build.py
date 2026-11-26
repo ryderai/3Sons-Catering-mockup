@@ -8,7 +8,6 @@ scripts/apply-hours.js to fill in the hours from /hours.json.
 Never hand-edit those files — the next build overwrites them.
 Never hand-edit /hours.json either — the owner's editor at /edit-hours owns it.
 
-Built by AI Syndicate — https://aisyndicate.com
 """
 import json, pathlib, re
 
@@ -16,10 +15,16 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 PAGES = ROOT / "_build" / "pages"
 
 # The domain actually serving the pages. Link-preview images must live here.
-SITE = "https://3sons-catering-mockup.vercel.app"
-VER = "20261125a"  # bump to bust caches on CSS/JS changes
+# Production since 26 Nov 2026. Preview hosts (*.vercel.app) stay hidden from Google by the
+# host-based X-Robots-Tag header in vercel.json.
+SITE = "https://3sonsbarbq.com"
+VER = "20261126a"  # bump to bust caches on CSS/JS changes
 
-LOGO = "https://cdn.prod.website-files.com/63ef93a7cfa2363d85e102e3/63efa35fa120a6052b8ee844_3sons-logo-white-type.svg"
+# All images are served from our own /assets/img (copied off the old Webflow CDN and the Google
+# profile on 26 Nov 2026), so nothing breaks when the Webflow plan is cancelled.
+# _build/image-sources.txt lists where each file came from.
+LOGO_PATH = "/assets/img/3sons-logo-white-type.svg"
+LOGO = SITE + LOGO_PATH
 TEL = "+18502786082"
 TEL_TXT = "(850) 278-6082"
 EMAIL = "brisket@3sonsbarbq.com"
@@ -30,15 +35,15 @@ MHM = "https://ohbz.com/design/7f1d45e8-f7d0-4456-a755-2c0f512efbd5"
 GIFT = "https://3sonsbarbq.cardfoundry.com/"
 CAREERS = "https://jobs.gusto.com/boards/three-sons-bbq-30a-4420b12b-75fb-4669-8c23-14211de2de90"
 
-# Owner photos from the 3 Sons Bar-B-Q Google Business Profile ("By owner"), read 26 Oct 2026.
-# Hotlinked for the preview only. Swap for files Chris sends before launch.
+# Owner photos from the 3 Sons Bar-B-Q Google Business Profile ("By owner"). URLs refreshed 26 Nov 2026 (the 26 Oct ones had expired).
+# Copied to /assets/img/gbp/<key>-w<width>.jpg (see _build/image-sources.txt). Swap for files Chris sends.
 IMG = {
-    "BAR1": "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RHpgfWZO4an_NAP1G7V-MV1CqnOy6KKntn_32-j5sXNyfzFASHZVxSQ9s7tMFSpXGdVHEWbNpL602T8zoK59OVq1z2wbjKphVgHD-Nw7-mtBOTaqhHAB3kPRQrJP-T1FtujCM",
-    "BAR2": "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QLMXmhXzcOjFxsaDBj5j655PPK9a2hqKYZl3VEV0-HOhfWapDWWIRcMypyAJmOD5q8jEDoqd4-oQeSQzs9wYFZrO0ysdjSHB_GOtXI-nuch1tKAkpoissfXrQfNS8ljeE59LVYow",
-    "DECK": "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Tq0-USHhij2zqblXgQzd9CAOqZ0DPw15IPpcBOkGOy-yQzzhomc7CQ9NgtZAnWO_rju0Gwp_AYPFgEa-gtedi5O4YKsQF36Z8JJmdZLNeh0yRJt7YXhTc7jGLtXbPqOdB1K17T",
-    "LOT":  "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QlLhE2v5Z7Yg5actHX91zeTt2gPqFrscIpqHF0mg502b7p5h9bgJRPrx7xfFnA7Olyv6hfhMMUc5AQBnFoQV7j98Dx82XnTNXuwuvRenAJ1sapmVvkVFVaK8W0GrneVENsboM5Qg",
-    "DUSK": "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Q08pOxWx4WRY8-szAzPXSug2XRfw6FebWIGBpzo12QQXWYcjV53bRaSUYpx_Ki4PVwvRfxHGfT4tl8hRj1L8KtmtaHpYJ5Xtsil3TJ0NQ3sSSSuNzY52fXdQN5WTKUGqeLNz9RoA",
-    "SIGN": "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TVlh0vJdUTqYYTSmk2bnaAkYGrxE8Q3h-L3O2aEqr1m_RgvHLm3kvo-uCYOGd0txLCEaEwARqvf6zOlfur6-U8UVhawcNps2mh_6xkY0KMDhgb_YYw9fl6gkZHxOGCPMwX2jo",
+    "BAR1": "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RTspirGf22zQ4hSRCl1TzOXLxVOe73Sq6w2ar1zow3ad5hGEnNSa1gRBhKCYzzal9efwEuqmOfzcMyLVrT48tW0nDJZzsxRtnGxSpbIVQk0WezxKWgR31b3zJUSPJeXniXzWo",
+    "BAR2": "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QM3rTMP-s8l1hSAXdqRdHeiXh6elSD856ai9G7rVNQ5wLaBCqT2p99Nw2KRATwdVrQZvhjAvOZ70K3CvUTmUI8dp3GMIef6rA_vyWAcNqd2DRK30KXUpHFVIxS7K8TOq7VmuIcZg",
+    "DECK": "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RnbrbkMnwp3WTBzi24RAVu2CK3hdWX_g9o-dHt5AvMJ7t6m1who1Oijry_VmMChUKhLCLRnccEULClT0v8k-RqBAlLAUDYlpIkNW3Pvy5PjxId3Ejo10KYoYFz-wNOuafxQhRq",
+    "LOT":  "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9T1E5nJI6iduach5tpupHLhXYK0SnC97j-6FEMLOd4fpLO7d2-idWbXwx7XF11CryoWro03emSDN1l6x5Jzqj9-N_ODAepXkUSWy2zIrUAlgvo4D_M-uTavCyl_B1AZjDQnZ_hHRQ",
+    "DUSK": "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9ShubTHr6KSvByWrbDkTt7v-Ta20XsqRwIMr5oZ-AFyJby-XJTAfHq8rulwxAuCZu_t6pNsGA18iiBS_C3k7PEfe8G8L4-YNtdsePgB80jdr8qgFN1EqxShOiHIvlEopZvq3fHELQ",
+    "SIGN": "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9T2r1dZIaAlBcLrm4K6DhdLq4HRJb3bZVbjdL4SoDEJlSHdKwqJciSzfBzF3OCOhLmlNTQek73EFyTTI4c_qIDiBFFGg5fh4hyLB3ESnqXPs9cLyo_WXRB0TpI0c8pYziq5jrg",
 }
 
 RESTAURANT_ID = "https://3sonsbarbq.com/#restaurant"
@@ -50,10 +55,10 @@ AMENITIES = [  # Google Business Profile "About" tab, read 26 Oct 2026
 
 RESTAURANT = {
     "@type": "Restaurant", "@id": RESTAURANT_ID, "name": "3 Sons Bar-B-Q",
-    "url": "https://www.3sonsbarbq.com/", "telephone": "+1-850-278-6082", "email": EMAIL,
+    "url": SITE + "/", "telephone": "+1-850-278-6082", "email": EMAIL,
     "servesCuisine": ["Barbecue", "Gulf Coast barbecue"], "priceRange": "$10–20",
     "foundingDate": "2013", "acceptsReservations": False,
-    "image": "https://cdn.prod.website-files.com/63ef93a7cfa2363d85e102e3/64e62e63608f42e274dd1ce8_3Sons-catering-1.webp",
+    "image": SITE + "/assets/img/3sons-catering-1.webp",
     "logo": LOGO,
     "address": {"@type": "PostalAddress", "streetAddress": "6931 W County Hwy 30A",
                 "addressLocality": "Santa Rosa Beach", "addressRegion": "FL",
@@ -74,7 +79,7 @@ RESTAURANT = {
 def catering_menu():
     sizes = [(10, "5 lbs.", "1.5 qts.", 220), (20, "10 lbs.", "2.5 qts.", 440), (30, "15 lbs.", "3 qts.", 660),
              (40, "20 lbs.", "1 gal.", 880), (50, "25 lbs.", "1.5 gals.", 1100)]
-    return {"@type": "Menu", "@id": "https://3sonsbarbq.com/#catering-menu", "name": "3 Sons Bar-B-Q Catering Menu",
+    return {"@type": "Menu", "@id": SITE + "/catering#catering-menu", "name": "3 Sons Bar-B-Q Catering Menu",
             "hasMenuSection": [{"@type": "MenuSection",
                 "name": "Catering packages (up to 3 meats, up to 3 sides, sauces and disposable serving utensils)",
                 "hasMenuItem": [{"@type": "MenuItem", "name": f"Catering for {n}",
@@ -90,6 +95,8 @@ def faq_schema(html):
             "mainEntity": [{"@type": "Question", "name": strip(q),
                             "acceptedAnswer": {"@type": "Answer", "text": strip(a)}} for q, a in qa]}
 
+# Rule 115e (24 Nov 2026): no AI Syndicate attribution in client code until 3 Sons OKs a written list.
+# Kept here, NOT printed on any page.
 GEO_CREDIT = {  # AI Syndicate house standard 1 — homepage only
     "@context": "https://schema.org", "@type": "Service",
     "name": "GEO Optimization — 3sonsbarbq.com", "serviceType": "Generative Engine Optimization (GEO)",
@@ -113,11 +120,7 @@ def head(p):
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{p['title']}</title>
 <meta name="description" content="{p['desc']}">
-<!-- AI search optimization (GEO) for this site by AI Syndicate — https://aisyndicate.com -->
-<!-- DESIGN PREVIEW: noindex on purpose. Flip to the GEO robots line below at go-live. -->
-<meta name="robots" content="noindex, nofollow">
-<!-- AI Syndicate GEO Trust Signal Package (robots line held back until launch) -->
-<!-- <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"> -->
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="publisher" content="3 Sons Bar-B-Q">
 <meta name="geo.region" content="US-FL">
 <meta name="geo.placename" content="Santa Rosa Beach, FL">
@@ -162,7 +165,9 @@ NAV = [("/catering", "Catering", "catering"), ("/menu", "Menu", "menu"), ("/visi
 
 # ---- Announcement bar (the first thing a future CMS should edit). Set to None to hide it.
 # Source: 3sonsbarbq.com homepage button "Thanksgiving Pre-Orders & Online Catering Orders" (read 26 Oct 2026).
-ANNOUNCEMENT = None  # Thanksgiving banner removed 25 Nov 2026
+# Thanksgiving banner removed 26 Nov 2026 (it was Thanksgiving Day). Example:
+# ANNOUNCEMENT = {"text": "Christmas pre-orders are open.", "link_text": "Pre-order online", "href": HONEYCART, "external": True}
+ANNOUNCEMENT = None
 
 def announcement():
     a = ANNOUNCEMENT
@@ -181,11 +186,10 @@ def header(current):
         links.append(f'      <a href="{href}"{cur}>{label}</a>')
     return f"""<body class="no-js">
 <a class="skip" href="#main">Skip to content</a>
-<aside class="concept" aria-label="Preview note">Design preview for 3 Sons Bar-B-Q · Photos are 3 Sons’ own (Google profile and current site) · Striped boxes are waiting on photos</aside>
 {announcement()}
 <header class="hdr">
   <div class="wrap">
-    <a class="logo" href="/" aria-label="3 Sons Bar-B-Q, home"{' aria-current="page"' if current == "home" else ""}><img src="{LOGO}" alt="" width="140" height="56"></a>
+    <a class="logo" href="/" aria-label="3 Sons Bar-B-Q, home"{' aria-current="page"' if current == "home" else ""}><img src="{LOGO_PATH}" alt="" width="140" height="56"></a>
     <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav id="nav" class="nav" aria-label="Main">
 {chr(10).join(links)}
@@ -264,7 +268,6 @@ def footer(cta):
   </div>
   <div class="wrap dest__bar">
     <span>© 2026 3 Sons Bar-B-Q · Est. 2013 · ★ 4.6 on Google · 2024 &amp; 2026 Best of the Emerald Coast</span>
-    <p class="ai-syndicate-credit">GEO Optimization by <a href="https://aisyndicate.com" target="_blank" rel="noopener" aria-label="AI Syndicate (opens in a new tab)">AI Syndicate</a></p>
     <a href="#main">Back to top ↑</a>
   </div>
 </footer>
@@ -332,25 +335,49 @@ def keep_together(html):
             out.append(part if skip else re.sub(r"Mile Marker 1\b", '<span class="nw">Mile Marker 1</span>', part))
     return "".join(out)
 
+WEBFLOW = "https://cdn.prod.website-files.com/63ef93a7cfa2363d85e102e3/"
+WEBFLOW_FILES = {  # old Webflow CDN file -> our copy
+    "63efa35fa120a6052b8ee844_3sons-logo-white-type.svg": "3sons-logo-white-type.svg",
+    "6464d5cddf7a01af8b53e0a4_fire-coals-background.webp": "fire-coals-background.webp",
+    "64e62e63608f42e274dd1ce8_3Sons-catering-1.webp": "3sons-catering-1.webp",
+    "64e66b09932ab3b8bfb6dcb9_catering-background.webp": "catering-background.webp",
+}
+IMG_USED = set()
+
 def fill(html):
     html = html.replace("{{MAP}}", MAP)
-    for k, v in IMG.items():
-        html = html.replace("{{IMG_" + k + "}}", v)
+    def gbp(m):
+        IMG_USED.add((m.group(1), m.group(2)))
+        return f"/assets/img/gbp/{m.group(1).lower()}-w{m.group(2)}.jpg"
+    html = re.sub(r"\{\{IMG_([A-Z0-9]+)\}\}=w(\d+)", gbp, html)
+    for old, new in WEBFLOW_FILES.items():
+        html = html.replace(WEBFLOW + old, "/assets/img/" + new)
     html = html.replace("{{MAPS_DIR}}", MAPS_DIR).replace("{{TEL}}", TEL).replace("{{TEL_TXT}}", TEL_TXT) \
                .replace("{{EMAIL}}", EMAIL).replace("{{GIFT}}", GIFT).replace("{{HONEYCART}}", HONEYCART).replace("{{MHM}}", MHM)
     assert "{{" not in html, re.findall(r"\{\{[^}]+\}\}", html)
     return html
 
+def website_node():
+    return {"@type": "WebSite", "@id": SITE + "/#website", "name": "3 Sons Bar-B-Q", "url": SITE + "/",
+            "publisher": {"@id": RESTAURANT_ID}}
+
+def webpage_node(path, name):
+    return {"@type": "WebPage", "@id": SITE + path + "#webpage", "url": SITE + path, "name": name,
+            "isPartOf": {"@id": SITE + "/#website"}, "about": {"@id": RESTAURANT_ID}}
+
+# Rule 115 (24 Nov 2026): ONE Restaurant entity (one @id). Its full details print only on the pages whose
+# visible text shows them (home + visit: address, hours, amenities). Other pages point at it by @id.
+FULL_RESTAURANT_PAGES = {"/visit"}
+
 def webpage(path, name, extra=None):
     g = {"@context": "https://schema.org", "@graph": [
-        RESTAURANT,
-        {"@type": "WebPage", "@id": SITE + path + "#webpage", "url": SITE + path, "name": name,
-         "isPartOf": {"@type": "WebSite", "name": "3 Sons Bar-B-Q", "url": SITE + "/"},
-         "about": {"@id": RESTAURANT_ID}},
+        RESTAURANT if path in FULL_RESTAURANT_PAGES else None,
+        webpage_node(path, name),
         {"@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE + "/"},
             {"@type": "ListItem", "position": 2, "name": name, "item": SITE + path}]},
     ] + (extra or [])}
+    g["@graph"] = [n for n in g["@graph"] if n]
     return ld(g)
 
 def faq_from_page(html):
@@ -432,7 +459,7 @@ def build():
              og_title="3 Sons Bar-B-Q — Gulf Coast ’Q on 30A",
              og_desc="Smoked daily since 2013, one mile off US-98. Free parking, full bar, happy hour 2p–5p daily, catering from $220.",
              og_alt="3 Sons Bar-B-Q logo over pulled pork and brisket, with the words Gulf Coast ’Q on 30A",
-             schema=ld({"@context": "https://schema.org", "@graph": [menu_restaurant]}) + "\n" + ld(GEO_CREDIT),
+             schema=ld({"@context": "https://schema.org", "@graph": [menu_restaurant, website_node(), webpage_node("/", "Home")]}),
              main=src["home"], cta=CALL_PLAN),
         dict(file="menu.html", path="/menu", current="menu", md="menu.md", og="og-home.jpg",
              title="Menu | 3 Sons Bar-B-Q · Brisket, Slab Wrap &amp; Texas Twinkies in Santa Rosa Beach",
@@ -498,6 +525,77 @@ def build():
                           {"src": "/icon-512.png", "sizes": "512x512", "type": "image/png"},
                           {"src": "/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}]}
     (ROOT / "site.webmanifest").write_text(json.dumps(manifest, indent=2) + "\n")
+    write_site_files(pages)
+
+PUBLIC_PAGES = ["/", "/menu", "/catering", "/happy-hour", "/visit", "/faq", "/terms", "/accessibility"]
+
+def write_site_files(pages):
+    """Production files for crawlers and AI (26 Nov 2026): sitemap, robots, llms.txt, llms-full.txt, agents.md.
+    Hours markers stay in llms*.txt so scripts/apply-hours.js keeps them current after owner edits."""
+    import datetime
+    today = datetime.date.today().isoformat()
+    urls = "".join(f"  <url><loc>{SITE}{u}</loc><lastmod>{today}</lastmod></url>\n" for u in PUBLIC_PAGES)
+    (ROOT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + urls + "</urlset>\n")
+    (ROOT / "robots.txt").write_text("User-agent: *\nAllow: /\nDisallow: /api/\n\n"
+        f"Sitemap: {SITE}/sitemap.xml\n")
+    links = "\n".join(f"- [{re.sub(r'&amp;', '&', p['og_title'])}]({SITE}{p['path'] if p['path'] != '/' else '/'}): "
+                      f"{re.sub(r'&amp;', '&', p['desc'])} Plain-text copy: {SITE}/{p['md']}" for p in pages)
+    facts = f"""- Name: 3 Sons Bar-B-Q (barbecue restaurant, full-service bar and catering)
+- Address: 6931 W County Hwy 30A, Santa Rosa Beach, FL 32459 (Mile Marker 1 on 30A, one mile off US-98)
+- Phone: {TEL_TXT} · Email: {EMAIL}
+- Hours: <!--h:summary--><!--/h--><!--h:noteSep--><!--/h-->
+- Holidays: <!--h:holidayFull--><!--/h-->
+- Happy hour: 2p–5p daily at the bar
+- Catering: pickup only, at the restaurant. Packages for 10 to 50 people from $220 plus tax and the 18% catering gratuity, or a custom order. Order online at {HONEYCART} or call {TEL_TXT}. Call to confirm how much notice your order needs.
+- Reservations: not needed (99 seats, free parking lot, wheelchair accessible)
+- Restaurant delivery (not catering): 30A Beach Bites and DoorDash
+- Gift cards: {GIFT}
+- Since 2013. 2024 & 2026 Best of the Emerald Coast (Emerald Coast Magazine; 2024 for Barbecue)."""
+    llms = f"""# 3 Sons Bar-B-Q
+
+> Gulf Coast barbecue smoked daily at Mile Marker 1 on 30A in Santa Rosa Beach, Florida, one mile off US-98. Restaurant, full-service bar with happy hour, and pickup catering.
+
+## Key facts
+{facts}
+
+## Pages
+{links}
+
+## More
+- Full text of every page: {SITE}/llms-full.txt
+- Rules for AI agents: {SITE}/agents.md
+"""
+    (ROOT / "llms.txt").write_text(llms)
+    full = [llms, "", "---", ""]
+    for p in pages:
+        full += [(ROOT / p["md"]).read_text().strip(), "", "---", ""]
+    (ROOT / "llms-full.txt").write_text("\n".join(full).rstrip("-\n ") + "\n")
+    (ROOT / "agents.md").write_text(f"""# agents.md — 3 Sons Bar-B-Q ({SITE})
+
+Guidance for AI assistants and agents that read or act on this site.
+
+## Facts to use
+{facts}
+
+## Sources, best first
+1. This site's pages and their plain-text copies (each page's .md link, or {SITE}/llms-full.txt).
+2. Hours on this site are updated by the owner and are the current ones.
+
+## When helping someone order
+- Catering is pickup only. Never promise catering delivery.
+- Online catering orders: {HONEYCART}. Questions or custom orders: call {TEL_TXT} or email {EMAIL}.
+- Do not place, change or pay for an order without the person's clear OK.
+- No reservations are taken or needed.
+
+## Please don't
+- Don't use /edit-hours or /api/ (owner tools, not for the public).
+- Don't quote prices as final. Menu prices are cash prices; card prices include a 3.5% non-cash adjustment.
+""")
+    # Where every copied image came from (the push step downloads them; see _build/fetch-images.sh).
+    lines = [f"assets/img/{new} {WEBFLOW}{old}" for old, new in WEBFLOW_FILES.items()]
+    lines += [f"assets/img/gbp/{k.lower()}-w{w}.jpg {IMG[k]}=w{w}" for k, w in sorted(IMG_USED)]
+    (ROOT / "_build" / "image-sources.txt").write_text("# local-path source-url (copied 26 Nov 2026)\n" + "\n".join(lines) + "\n")
 
 if __name__ == "__main__":
     build()

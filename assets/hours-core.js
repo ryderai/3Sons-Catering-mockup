@@ -1,4 +1,4 @@
-/* 3 Sons Bar-B-Q — hours logic. Built by AI Syndicate.
+/* 3 Sons Bar-B-Q — hours logic.
  *
  * ONE file, used in four places so they can never disagree:
  *   1. the website (assets/hours-live.js)  → "Open now" line + upcoming special days

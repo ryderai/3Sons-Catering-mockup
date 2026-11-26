@@ -1,6 +1,6 @@
 # BBQ Catering in Santa Rosa Beach & 30A | 3 Sons Bar-B-Q
 
-Source: https://3sons-catering-mockup.vercel.app/catering
+Source: https://3sonsbarbq.com/catering
 
 01 Good grub for great gatherings
 

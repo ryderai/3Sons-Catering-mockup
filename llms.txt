@@ -1,0 +1,30 @@
+# 3 Sons Bar-B-Q
+
+> Gulf Coast barbecue smoked daily at Mile Marker 1 on 30A in Santa Rosa Beach, Florida, one mile off US-98. Restaurant, full-service bar with happy hour, and pickup catering.
+
+## Key facts
+- Name: 3 Sons Bar-B-Q (barbecue restaurant, full-service bar and catering)
+- Address: 6931 W County Hwy 30A, Santa Rosa Beach, FL 32459 (Mile Marker 1 on 30A, one mile off US-98)
+- Phone: (850) 278-6082 · Email: brisket@3sonsbarbq.com
+- Hours: <!--h:summary-->Every day, 11a–8p<!--/h--><!--h:noteSep--> · We stay open a little later in summer, so call to check<!--/h-->
+- Holidays: <!--h:holidayFull-->Closed Thanksgiving & Christmas Day. Other holiday hours can vary, so call ahead.<!--/h-->
+- Happy hour: 2p–5p daily at the bar
+- Catering: pickup only, at the restaurant. Packages for 10 to 50 people from $220 plus tax and the 18% catering gratuity, or a custom order. Order online at https://3sonsbar-b-q.gethoneycart.com/ or call (850) 278-6082. Call to confirm how much notice your order needs.
+- Reservations: not needed (99 seats, free parking lot, wheelchair accessible)
+- Restaurant delivery (not catering): 30A Beach Bites and DoorDash
+- Gift cards: https://3sonsbarbq.cardfoundry.com/
+- Since 2013. 2024 & 2026 Best of the Emerald Coast (Emerald Coast Magazine; 2024 for Barbecue).
+
+## Pages
+- [3 Sons Bar-B-Q — Gulf Coast ’Q on 30A](https://3sonsbarbq.com/): Gulf Coast ’Q smoked daily at Mile Marker 1 on 30A, one mile off US-98. Brisket, the Slab Wrap, Texas Twinkies, a full-service bar, 99 seats, free parking and catering from $220. Plain-text copy: https://3sonsbarbq.com/index.md
+- [The 3 Sons Bar-B-Q menu](https://3sonsbarbq.com/menu): The full 3 Sons Bar-B-Q menu with prices: plates, sandwiches, the Slab Wrap, Texas Twinkies, Trailer Tacos, meat by the pound, sides, kids’ meals and desserts. Plain-text copy: https://3sonsbarbq.com/menu.md
+- [BBQ catering from 3 Sons Bar-B-Q](https://3sonsbarbq.com/catering): BBQ catering for offices, birthdays, anniversaries and rental houses on 30A. Packages for 10 to 50 people from $220, or build a custom order. Plan it and see the day to order by. Plain-text copy: https://3sonsbarbq.com/catering.md
+- [Happy Hour at 3 Sons Bar-B-Q — 2p–5p daily](https://3sonsbarbq.com/happy-hour): Happy hour 2p–5p every day at the 3 Sons Bar-B-Q full-service bar. Bourbon, tequila, cocktails, beer and wine, TVs over the bar, free parking, at Mile Marker 1 on 30A. Plain-text copy: https://3sonsbarbq.com/happy-hour.md
+- [Visit 3 Sons Bar-B-Q — one mile off US-98](https://3sonsbarbq.com/visit): 3 Sons Bar-B-Q is one mile off US-98 at Mile Marker 1 on 30A. Free parking lot, 99 seats, wheelchair-accessible entrance and ramp, no reservations needed. Plain-text copy: https://3sonsbarbq.com/visit.md
+- [3 Sons Bar-B-Q — questions, answered](https://3sonsbarbq.com/faq): Answers about 3 Sons Bar-B-Q: catering, location, barbecue style, vegetarian and gluten-free options, reservations, takeout, delivery, holiday hours, kids’ menu, parking and accessibility. Plain-text copy: https://3sonsbarbq.com/faq.md
+- [Terms & Conditions — 3 Sons Bar-B-Q](https://3sonsbarbq.com/terms): 3 Sons Bar-B-Q terms and conditions: privacy, security, delivery and gift card return policies. Plain-text copy: https://3sonsbarbq.com/terms.md
+- [Accessibility at 3 Sons Bar-B-Q](https://3sonsbarbq.com/accessibility): 3 Sons Bar-B-Q accessibility: a ramp, a wheelchair-accessible entrance, parking, restroom and seating, and a website built to WCAG 2.1 AA. Call (850) 278-6082 for help. Plain-text copy: https://3sonsbarbq.com/accessibility.md
+
+## More
+- Full text of every page: https://3sonsbarbq.com/llms-full.txt
+- Rules for AI agents: https://3sonsbarbq.com/agents.md
