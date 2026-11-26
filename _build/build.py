@@ -18,7 +18,7 @@ PAGES = ROOT / "_build" / "pages"
 # Production since 26 Nov 2026. Preview hosts (*.vercel.app) stay hidden from Google by the
 # host-based X-Robots-Tag header in vercel.json.
 SITE = "https://3sonsbarbq.com"
-VER = "20261126a"  # bump to bust caches on CSS/JS changes
+VER = "20261126b"  # bump to bust caches on CSS/JS changes
 
 # All images are served from our own /assets/img (copied off the old Webflow CDN and the Google
 # profile on 26 Nov 2026), so nothing breaks when the Webflow plan is cancelled.
@@ -44,6 +44,12 @@ IMG = {
     "LOT":  "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9T1E5nJI6iduach5tpupHLhXYK0SnC97j-6FEMLOd4fpLO7d2-idWbXwx7XF11CryoWro03emSDN1l6x5Jzqj9-N_ODAepXkUSWy2zIrUAlgvo4D_M-uTavCyl_B1AZjDQnZ_hHRQ",
     "DUSK": "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9ShubTHr6KSvByWrbDkTt7v-Ta20XsqRwIMr5oZ-AFyJby-XJTAfHq8rulwxAuCZu_t6pNsGA18iiBS_C3k7PEfe8G8L4-YNtdsePgB80jdr8qgFN1EqxShOiHIvlEopZvq3fHELQ",
     "SIGN": "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9T2r1dZIaAlBcLrm4K6DhdLq4HRJb3bZVbjdL4SoDEJlSHdKwqJciSzfBzF3OCOhLmlNTQek73EFyTTI4c_qIDiBFFGg5fh4hyLB3ESnqXPs9cLyo_WXRB0TpI0c8pYziq5jrg",
+    # Food photos, also "By owner" on the Google profile (read 26 Nov 2026)
+    "SLAB": "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RA69DSB3sD7jFMusPYYWDbDlG8Pc4DxuJu_aoJijLdoaeG3kENQXaPMYBwK1EY9ZJi4dvBmKPrZFTuJ-MJLEefyfw2eyTL2K6PidzZgczuBwzuhfL-3cf1n13QbC9qrZs6-Shrag",
+    "VOODOO": "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9T1znBaK7k8v8BCV1pHvFSIw2Ag11grrxQ0swZ2qtLoIZpCLJsR60-a9sldz34t7gnrkGo63csb0wc4GYxAwu6er_cIaF2UzwzkQ4bMNHYbCxNCHdbrtkhF4zh4quGdUJzFPmvabiNaJRZd",
+    "PLATTER": "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QHtKM_WclvR0fHUlbPP1YHHMDo_X5afMs8cRPtKRG0sFS37IM0bH6pcANXJDhtDjpWo1ACq8liGiBgH22_62OWsIwvOFiJJ9udNLMxFRXmZSAI94E8xLRxUFIkmXtj6_7at1Xz70hSrxar",
+    "TRAY": "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SsZVQ6ex2FHELGAHfvhBwgblDlyqrRJak--FQ9o1TeRmKo9VP26j-kL9Uz27VvUhz8AIEMh74Vjgrr0eEUIK7hcLNLcsHxvs8kOQO_oBfouhLGpeBstViyjbEVxv4ocO9mH3oroPzCGp1i",
+    "PORK": "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SW1Z1OQf11sKLC_sG1LvCSmG4s4W0-fPIN_xoNie9DnFsCsmMo1dKWMm7KZDJtPL8wN0CgT2t7BQYDK4XBJzdKSleU0q2-iUSWPaB3ADzrh8ni4bgOUUAUhyh8teklSUEi3YBSh0XR1a0c",
 }
 
 RESTAURANT_ID = "https://3sonsbarbq.com/#restaurant"

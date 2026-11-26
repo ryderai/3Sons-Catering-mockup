@@ -41,9 +41,9 @@ Bacon-wrapped jalapeños stuffed with cheddar, cream cheese and brisket. $14.
 
 Plate with two sides, $16. Or a sandwich with one side, $14.
 
-### Loaded Potato
+### Zapp’s Voodoo Bowl
 
-Cheddar, green onion, sour cream, butter and bacon, topped with your meat. From $16.
+Zapp’s chips topped with pulled pork, cole slaw and Sweet Georgia Brown sauce. $16.
 
 ### Homemade Cornbread
 
