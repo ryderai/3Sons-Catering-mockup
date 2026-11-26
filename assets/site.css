@@ -572,3 +572,5 @@ abbr.gf{font:700 .6875rem/1 var(--body);letter-spacing:.06em;text-decoration:non
 .meat--plain .meat__body{align-self:stretch;display:flex;flex-direction:column;justify-content:flex-end}
 .hh__pics figure:nth-child(2):last-child{grid-row:span 2}
 @media (max-width:480px){.page-top h1{font-size:clamp(1.75rem,9vw,2.4rem)}}
+/* Texas Twinkies card: blurred menu backdrop until a real photo exists (26 Nov 2026) */
+.meat--menu .meat__img{inset:-8px;background-size:200%;background-position:22% 58%;filter:blur(2.5px) brightness(.5);transform:none!important}

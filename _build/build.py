@@ -18,7 +18,7 @@ PAGES = ROOT / "_build" / "pages"
 # Production since 26 Nov 2026. Preview hosts (*.vercel.app) stay hidden from Google by the
 # host-based X-Robots-Tag header in vercel.json.
 SITE = "https://3sonsbarbq.com"
-VER = "20261126b"  # bump to bust caches on CSS/JS changes
+VER = "20261126c"  # bump to bust caches on CSS/JS changes
 
 # All images are served from our own /assets/img (copied off the old Webflow CDN and the Google
 # profile on 26 Nov 2026), so nothing breaks when the Webflow plan is cancelled.
@@ -50,6 +50,8 @@ IMG = {
     "PLATTER": "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QHtKM_WclvR0fHUlbPP1YHHMDo_X5afMs8cRPtKRG0sFS37IM0bH6pcANXJDhtDjpWo1ACq8liGiBgH22_62OWsIwvOFiJJ9udNLMxFRXmZSAI94E8xLRxUFIkmXtj6_7at1Xz70hSrxar",
     "TRAY": "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SsZVQ6ex2FHELGAHfvhBwgblDlyqrRJak--FQ9o1TeRmKo9VP26j-kL9Uz27VvUhz8AIEMh74Vjgrr0eEUIK7hcLNLcsHxvs8kOQO_oBfouhLGpeBstViyjbEVxv4ocO9mH3oroPzCGp1i",
     "PORK": "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SW1Z1OQf11sKLC_sG1LvCSmG4s4W0-fPIN_xoNie9DnFsCsmMo1dKWMm7KZDJtPL8wN0CgT2t7BQYDK4XBJzdKSleU0q2-iUSWPaB3ADzrh8ni4bgOUUAUhyh8teklSUEi3YBSh0XR1a0c",
+    # Owner photo of the printed menu (no owner photo of the Texas Twinkies yet). Used blurred, as a backdrop only.
+    "MENU": "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TPz6a5HMp-l_CztfkjEEqElJqwgeKOifD3hLXQEzEN0D24MLB-qSwokas4XU03R4U_gS22Fc1qQn75T16YsRfV6xJU1qDlDJ-hXYmRqKNHUI8MIRzJ4M4oBaJtD5bOd08yIYk-nFvrJ-xM",
 }
 
 RESTAURANT_ID = "https://3sonsbarbq.com/#restaurant"
